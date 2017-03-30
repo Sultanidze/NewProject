@@ -659,6 +659,34 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 	border-width: 5px;
 	margin-left: -5px;
 }
+.arrowBox__circle{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    -webkit-transform: translate3d(5.5px,5.5px,0);
+    -ms-transform: translate3d(5.5px,5.5px,0);
+    -o-transform: translate3d(5.5px,5.5px,0);
+    transform: translate3d(5.5px,5.5px,0);
+}
+.circle_red{
+    background-color: #eb1c23
+}
+.circle_green{
+    background-color: #9be815
+}
+.circle_blue{
+    background-color: #1f4d80
+}
+.circle_yellow{
+    background-color: #f5ca00
+}
+.circle_grey{
+    background-color: #8ca5af
+}
+.circle_purple{
+    background-color: #ab2fd4
+}
 /*my custom leaflet icon end*/
 
 /*=========== Leaflet end ===========*/

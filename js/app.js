@@ -10,14 +10,21 @@ $(document).ready(function(){
 	var geoDataSuccess = function(data){	//function fired after succesfull geoJson data ajax load
 		var layer = L.geoJSON(data,{
 			pointToLayer: function(feature, latlng) {
+				var color = feature.properties.color;	//save current feature marker color
 				var myIcon = L.divIcon({
-					className: 'arrow_box',
-					iconSize:     [35, 35],
-					iconAnchor: [17.5, 39],
-					html: "<div class='arrowBox__circle'></div>"
+					className: 'arrow_box',	//custom html div marker
+					iconSize:     [35, 35],	//marker size
+					iconAnchor: [17.5, 39],	//making arrow points ti a place, not top left corner of div
+					popupAnchor:  [0, -37],
+					html: "<div class='arrowBox__circle circle_"+color+"'></div>"	// circle inside the marker
 				});
 				return L.marker(latlng, {icon: myIcon});	//custom html marker icon
-			}
+			},
+			onEachFeature: function (feature, layer) {
+                   layer.bindPopup('<strong>' + feature.properties.title +'</strong>' + '<br>'
+                                                 + feature.properties.content);
+           }
+
 		});
 		markers.addLayer(layer);
 		// markers.addTo(map);
