@@ -1750,7 +1750,9 @@ label{
 }
 
 /* ---------- my styles ---------- */
-
+body{
+    min-width: 320px;
+}
 /* placeholder stylization */
 .form-control::-webkit-input-placeholder{
     color: #8ca5af;
@@ -1837,9 +1839,15 @@ label{
     box-shadow: 0 5px 5px -5px rgba(0,0,0,0.5);
     background-color: #fff;
 }
+.searchForm__btn_toggle{
+    display: none;
+    margin-bottom: 15px;
+    height: 20px;
+}
+.form-group-xs{}
 label[for="radius"]{
     max-width: none;
-    margin-right: -20px;
+    margin-right: -25px;
 }
 .span_radius{
     color:#1f4d80;
@@ -1944,7 +1952,15 @@ main .section__header .navbar-nav>li{
 }
 .catalog__content{
     margin-top: 40px;
-/*    min-height: 200px;*/
+    min-height: 200px;
+}
+.ajax_rubrics{
+    text-align: center;
+}
+.rubric{
+    text-align: left;
+    display: inline-block;
+    min-width: 155px;
 }
 .rubric h3{
     text-align: center;
@@ -1955,8 +1971,7 @@ main .section__header .navbar-nav>li{
 }
 .rubric__list li{
     position: relative;
-/*    padding-left: 25%;*/
-    padding-left: 18%;
+    padding-left: 14%;
 }
 .rubric__list li:before{
     content: '';
@@ -2106,7 +2121,7 @@ main .section__header .navbar-nav>li{
     font-size: 14px;
 }
 body>footer{
-    padding: 35px 0 40px;
+    padding: 35px 0;
     background-color: #cad5d9;
 }
 .footer_main{
@@ -2295,6 +2310,47 @@ body>footer{
         margin-left: 256px;
     }
 }
+@media screen and (max-width: 1199px){
+    .container_mapForm {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .footer_main h3 {
+        font-size: 20px;
+        text-transform: none;
+    }
+}
+@media screen and (max-width: 991px){
+    .footer_main h3 {
+        margin-top: 0;
+    }
+    .footer_main label {
+        display: block;
+        line-height: 12px;
+    }
+    .form_email {
+        margin-top: 5px;
+        padding-bottom: 15px;
+    }
+    .social {
+        margin-bottom: 15px;
+    }
+    .contactUs {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 797px){
+    .ajax_newInAds, .ajax_newInBlog{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .footer_main h3 {
+        margin-bottom: 10px;
+    }
+    .menu_footer{
+        margin-bottom: 20px;
+    }
+}
 @media screen and (max-width: 767px){
     .navbar-default .navbar-right>li>a>.glyphicon{
         margin-top: 15px;
@@ -2304,8 +2360,32 @@ body>footer{
     .navbar-default .navbar-right>li>a>.glyphicon, .profile_img{
         float: right;
     }
+    body>footer{
+        padding-bottom: 30px;
+    }
+    .form-group-xs{
+        margin-bottom: 20px;
+    }
+    .form-group-largerXS{
+        margin-bottom: 0;
+    }
+    .row_footerSub{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .address{
+        float: none;
+    }
+    .politics{
+        float: none;
+    }
+    .copyright{
+        font-size: 12px;
+    }
 }
 /*-end------ media queries-------*/
+
+
 
 .sprite{
     display: inline-block;
