@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "парк",
+        "content": "дрова",
+        "type": "sell",
+        "marker": "green"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.43899536132813,
+          50.46875937355115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "зоопарк",
+        "type": "sell",
+        "marker": "purple",
+        "content": "тварини"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.46285629272461,
+          50.451929989931344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Антонов",
+        "content": "літаки",
+        "type": "sell",
+        "marker": "yellow"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.392560958862305,
+          50.458870104151565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Труханів",
+        "content": "риба",
+        "type": "sell",
+        "marker": "grey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.55023193359375,
+          50.46274956681952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker": "blue",
+        "type": "sell",
+        "content": "вода",
+        "title": "Голосіївський ліс"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.47401428222656,
+          50.369992582877195
+        ]
+      }
+    }
+  ]
+}
