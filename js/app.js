@@ -2,7 +2,9 @@ $(document).ready(function(){
 // map initialization (Leaflet.js plugin)
 	var map = L.map('map').setView([50.4036, 30.4812], 11);	//створюємо карту, виставляємо координати + зум
 	// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {	// шар зображення карти
-		L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {	// шар зображення карти
+		// L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {	// шар зображення карти
+		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {	// шар зображення карти
+			subdomains: ["a", "b", "c"],
 	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
@@ -21,18 +23,45 @@ $(document).ready(function(){
 				return L.marker(latlng, {icon: myIcon});	//custom html marker icon
 			},
 			onEachFeature: function (feature, layer) {
-                   layer.bindPopup('<strong>' + feature.properties.title +'</strong>' + '<br>'
-                                                 + feature.properties.content);
+                   layer.bindPopup('<strong>' + feature.properties.title +'</strong>' + '<br>' + feature.properties.content);
            }
-
 		});
 		markers.addLayer(layer);
 		// markers.addTo(map);
 		map.addLayer(markers);
 	};
 
-	var geoDataUrl = "./ajax/map.json";
-	$.get(geoDataUrl, {}, geoDataSuccess);
+	var  geoDataUrlBase = "./ajax/map.json"
+		,geoDataUrl
+		;
+	geoDataUrl = geoDataUrlBase;
+	// $.get("./ajax/map.json", {}, geoDataSuccess);
+
+	//map markers request form
+		var  $form = $(this).parents("#form_search")
+			,$search = $form.find("#search")
+			,$rubric = $form.find("#rubric")
+			,$city = $form.find("#city")
+			,$dateRange = $form.find("#dateRange")
+			,$radius = $form.find("#radius")
+			,$sellOrBuy = $form.find("#sellOrBuy")
+			;
+	$(".map-box #form_search button[type='submit']").click(function(event){
+		event.preventDefault();
+		// geoDataUrl = geoDataUrlBase + "?search=" + $search.val() + "&rubric=" + $rubric.val() + "&city=" + $city.val() + "&dateRange=" + $dateRange.val() + "&radius=" + $radius.val() + "&sellOrBuy=" + $sellOrBuy.val();
+		// $.get(geoDataUrl, {}, geoDataSuccess);
+		markers.clearLayers();
+		$.get(geoDataUrlBase, {
+			search: $search.val(),
+			rubric: $rubric.val(),
+			city: $city.val(),
+			dateRange: $dateRange.val(),
+			radius: $radius.val(),
+			sellOrBuy: $sellOrBuy.val()
+		}, geoDataSuccess);
+	});
+	$(".map-box #form_search button[type='submit']").trigger("click");
+
 //ajax ads catalog load
 	var  $rubricsAjax = $(".ajax_rubrics").load("./ajax/_buy-catalogue.html")	// before proposition buttons click
 	//

@@ -316,7 +316,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-	font: bold 18px 'Lucida Console', Monaco, monospace;
+	font: 18px 'Lucida Console', Monaco, monospace;
 	text-indent: 1px;
 	}
 .leaflet-control-zoom-out {
@@ -446,10 +446,19 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 	}
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
-	border: 2px solid rgba(0,0,0,0.2);
+	border: 1px solid rgba(202,213,217,1);
 	background-clip: padding-box;
 	}
 
+.leaflet-bar{
+    opacity: 0.6;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;;
+    transition: opacity 300ms;;
+}
+.leaflet-bar:hover{
+    opacity: 1;
+}
 
 /* popup */
 
@@ -635,6 +644,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 	background: #fff;
 	border: 1px solid #8ca5af;
     border-radius: 3px;
+    box-shadow: 3px 4px 6px -2px #666;
 }
 .arrow_box:after, .arrow_box:before {
 	top: 100%;
@@ -1189,7 +1199,7 @@ html .ui-button.ui-state-disabled:active {
     content: '';
 	position: absolute;
     top: 22%;
-    left: 22%;
+    left: 3px;
 	z-index: 2;
     border-radius: 50%;
 	width: 8px;
@@ -1829,7 +1839,7 @@ label{
 }
 label[for="radius"]{
     max-width: none;
-    margin-right: -10px;
+    margin-right: -20px;
 }
 .span_radius{
     color:#1f4d80;
@@ -1945,7 +1955,8 @@ main .section__header .navbar-nav>li{
 }
 .rubric__list li{
     position: relative;
-    padding-left: 25%;
+/*    padding-left: 25%;*/
+    padding-left: 18%;
 }
 .rubric__list li:before{
     content: '';

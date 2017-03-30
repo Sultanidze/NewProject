@@ -57,7 +57,7 @@
                     <div class="container_mapForm">
                         <form action="" id="form_search">
                             <div class="row">
-                                <div class="col-md-3 col-xs-12">
+                                <div class="col-md-3 col-sm-3 col-xs-12">
                                     <div class="form-group">
                                         <label for="search" class="sr-only">Что искать</label>
                                         <input type="text" class="form-control" id="search" placeholder="ЧТО ИСКАТЬ" name="search" required>
@@ -69,27 +69,28 @@
                                         <option value="2">2</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4 col-lg-offset-1 col-md-5 col-xs-12">
+                                <div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5 col-xs-12">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-sm-2">
                                             <div class="form-group">
                                                 <label for="city" class="">ГОРОД</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-9">
+                                        <div class="col-sm-10">
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-sm-6">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" id="city" placeholder="Kyiv" name="city" required>
+                                                        <input type="text" class="form-control" id="city" placeholder="" value="Киев" name="city" required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label for="dateRange" class="sr-only">Как давно</label>
                                                         <select class="form-control" id="dateRange" name="dateRange" required>
                                                             <option value="" disabled="" selected="" hidden="">КАК ДАВНО</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
+                                                            <option value="0">сегодня</option>
+                                                            <option value="1">вчера</option>
+                                                            <option value="2">2 дня назад</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -97,14 +98,14 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-sm-3">
                                             <label for="radius" class="">
                                                 <span>РАДИУС&#32;</span>
                                                 <span class="span_radius">12</span>
                                                 <span>&#32;км</span> 
                                             </label>
                                         </div>
-                                        <div class="col-md-9">
+                                        <div class="col-md-9 col-sm-9">
                                             <div class="wrap__slider">
                                                 <input type="range" min="0" max="100" value="" id="radius">
                                                 <div id="slider"></div>
@@ -112,9 +113,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-lg-offset-1 col-xs-12">
+                                <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4 col-xs-12">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-sm-6">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
@@ -128,7 +129,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-sm-6">
                                             <div class="wrap__searchBtn">
                                                 <button type="submit" class="btn btn-primary btn_search">ПОИСК</button>
                                             </div>
@@ -477,6 +478,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet.markercluster.js"></script>
+<!--    <script src="js/Yandex.js"></script>-->
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.selectric.min.js"></script>
