@@ -1,4 +1,56 @@
 $(document).ready(function(){
+// map height to bottom of viewport
+	var  $header = $("header")
+		,$mapBox = $(".map-box")
+		;
+	$(window).resize(function(){
+			$mapBox.outerHeight(function(){
+				return verge.viewportH() - $header.outerHeight();
+			})
+		// }
+	});
+	$(window).trigger("resize");
+
+// search_form toggle button
+	// треба ф-я перерахунку позиції, бо відкрита форма анімовано позиціонується відносно top (а не css.bottom)
+		var closedSearchFormHeight = $(".map-box__inner .container").outerHeight();	// висота мінімізованого .map-box__inner (кнопка форми фактично)
+	var minimizedMenuPosition = function(){ 
+		// console.log(closedSearchFormHeight);
+		return ($mapBox.outerHeight() - closedSearchFormHeight - 20);	
+	}
+	$(".searchForm__btn_toggle").click(function(){
+		if ($(".map-box__inner").hasClass("js-opened")){
+			$(".map-box__inner").animate({
+				opacity: 0.5,
+				top: minimizedMenuPosition()	// тепер плясати приходиться від top :(
+			},300);
+
+		} else{
+			$(".map-box__inner").animate({
+				opacity: 1,
+				top: 0
+			},300);
+		}
+		$(this).parents(".container_mapForm").find("#form_search").toggle(300);
+		$(this).children().toggleClass("rotate_vertical");
+		$(".map-box__inner").toggleClass("js-opened");
+	});
+	// оскільки тепер прив'язка до top через js, то при ресайзі вікна мінімізований .map-box__inner треба переміщати
+	$(window).resize(function(){
+		$(".map-box__inner").css("top", minimizedMenuPosition());
+		if (verge.viewportW()<768){
+			if (!$(".map-box__inner").hasClass("js-opened")){
+				closedSearchFormHeight = $(".map-box__inner .container").outerHeight();
+			} else{
+				$(".map-box__inner").css("top", 0);
+			}
+		}else{
+			$(".map-box__inner").attr("style", "");
+			$("#form_search").attr("display", "block")
+			closedSearchFormHeight = $(".map-box__inner .container").outerHeight();
+		}
+	});
+
 // map initialization (Leaflet.js plugin)
 	var map = L.map('map').setView([50.4036, 30.4812], 11);	//створюємо карту, виставляємо координати + зум
 	// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {	// шар зображення карти
