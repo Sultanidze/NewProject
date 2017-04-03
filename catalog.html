@@ -50,6 +50,57 @@
     </nav>
     </header>
     <main>
+        <section class="search_catalog">
+            <div class="container">
+                <form action="" class="row b-form_catalog" id="form_catalog">
+                    <div class="form-group">
+                        <div class="wrap_dataRange">
+                            <label for="city" class="sr-only">ГОРОД</label>
+                            <input type="text" class="form-control" id="city" placeholder="ГОРОД" value="Киев, Киевская область" name="city" required>
+                            <label for="radius" class="sr-only">Как далеко</label>
+                            <select class="form-control" id="radius" name="radius" required>
+                                <option value="" disabled="" selected="" hidden="">+0км</option>
+                                <option value="5">+5км</option>
+                                <option value="12">+12км</option>
+                                <option value="30">+30км</option>
+                            </select>
+                        </div>
+                        <label for="district" class="sr-only">РАЙОН</label>
+                        <select class="form-control" id="district" name="district" required>
+                            <option value="" disabled="" selected="" hidden="">РАЙОН</option>
+                            <option value="0">Днепровский</option>
+                            <option value="1">Святошинский</option>
+                            <option value="2">Печерский</option>
+                        </select>
+                        
+                        <label for="rubric" class="sr-only">РУБРИКИ</label>
+                        <select class="form-control" id="rubric" name="rubric" required>
+                            <option value="" disabled="" selected="" hidden="">РУБРИКИ</option>
+                            <option value="1">Одежда/обувь</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" class="radio sr-only" id="sell" value="sell" name="sellOrBuy" required>
+                        <label for="sell">Я предлагаю</label>
+                        <input type="radio" class="radio sr-only" id="buy" value="buy" name="sellOrBuy" checked required>
+                        <label for="buy">Я нуждаюсь</label>
+                        
+                        <select class="form-control" id="sort" name="sort" required>
+                            <option value="" disabled="" selected="" hidden="">СОРТИРОВКА ПО</option>
+                            <option value="1">Дате (по убыванию)</option>
+                            <option value="2">Дате (по возрастанию)</option>
+                        </select>
+                        <label for="sort" class="sr-only">СОРТИРОВКА ПО</label>
+                        
+                        <input type="radio" class="ad__view ad__view_tiles sr-only" id="tiles" value="tiles" name="view" required>
+                        <label for="tiles"></label>
+                        <input type="radio" class="ad__view ad__view_list sr-only" id="list" value="list" name="view" checked required>
+                        <label for="list"></label>
+                    </div>
+                </form>
+            </div>
+        </section>
         <section class="map-box_catalog">
             <div class="" id="map"></div>
         </section>
@@ -230,18 +281,20 @@
             </div>
         </section>
         <section class="section_seo">
-            <div class="container">
+            <div class="container container_seo">
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <div class="seo__content">
-                            <h3>Выбор кожаной обуви</h3>
-                            <p>Когда наступает жаркое лето, многие люди задаются вопросом: где купить недорого кондиционеры в Украине? Действительно, порой терпеть жару просто невыносимо, но кондиционер не является самым дешевым предметом для дома, следовательно, его выбор можно назвать серьезным решением. По этой причине следует учесть некоторые важные аспекты того, каков должен быть выбор кондиционера для квартиры.<br><br>Прежде чем купить кондиционер недорого или, наоборот, расставшись с солидной денежной суммой, нужно определиться с размером помещенДиалогический контекст вызывает диссонансный мифопоэтический хронотоп, поэтому никого не удивляет, что в финале порок наказан. Декодирование, несмотря на внешние воздействия, интегрирует былинный метр. Орнаментальный сказ изменяем.<br><br>Из приведенных текстуальных фрагментов видно, как жанр вразнобой дает эпитет. М.М.Бахтин понимал тот факт, что коммунальный модернизм текстологически нивелирует прозаический ямб. В связи с этим нужно подчеркнуть, что мифопоэтическое пространство интегрирует словесный коммунальный модернизм, например, "Борис Годунов" А.С.Пушкина, "Кому на Руси жить хорошо" Н.А.Некрасова, "Песня о Соколе" М.Горького и др. Абстракционизм<br><br>Прежде чем купить кондиционер недорого или, наоборот, расставшись с солидной денежной суммой, нужно определиться с размером помещенДиалогический контекст вызывает диссонансный мифопоэтический хронотоп, поэтому никого не удивляет, что в финале порок наказан. Декодирование, несмотря на внешние воздействия, интегрирует былинный метр. Орнаментальный сказ изменяем.</p>
+                        <div class="b-seo">
+                            <div class="seo__content">
+                                <h3>Выбор кожаной обуви</h3>
+                                <p>Когда наступает жаркое лето, многие люди задаются вопросом: где купить недорого кондиционеры в Украине? Действительно, порой терпеть жару просто невыносимо, но кондиционер не является самым дешевым предметом для дома, следовательно, его выбор можно назвать серьезным решением. По этой причине следует учесть некоторые важные аспекты того, каков должен быть выбор кондиционера для квартиры.<br><br>Прежде чем купить кондиционер недорого или, наоборот, расставшись с солидной денежной суммой, нужно определиться с размером помещенДиалогический контекст вызывает диссонансный мифопоэтический хронотоп, поэтому никого не удивляет, что в финале порок наказан. Декодирование, несмотря на внешние воздействия, интегрирует былинный метр. Орнаментальный сказ изменяем.<br><br>Из приведенных текстуальных фрагментов видно, как жанр вразнобой дает эпитет. М.М.Бахтин понимал тот факт, что коммунальный модернизм текстологически нивелирует прозаический ямб. В связи с этим нужно подчеркнуть, что мифопоэтическое пространство интегрирует словесный коммунальный модернизм, например, "Борис Годунов" А.С.Пушкина, "Кому на Руси жить хорошо" Н.А.Некрасова, "Песня о Соколе" М.Горького и др. Абстракционизм<br><br>Прежде чем купить кондиционер недорого или, наоборот, расставшись с солидной денежной суммой, нужно определиться с размером помещенДиалогический контекст вызывает диссонансный мифопоэтический хронотоп, поэтому никого не удивляет, что в финале порок наказан. Декодирование, несмотря на внешние воздействия, интегрирует былинный метр. Орнаментальный сказ изменяем.</p>
+                            </div>
                             <button class="b-readmore">Читать полностью</button>
                         </div>
                     </div>
-                    <div class="col-sm-4 hidden-xs">
+                    <aside class="col-sm-4 hidden-xs">
                         <img src="./img/girl.jpg" alt="girl expert" class="img-responsive img_expert">
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>

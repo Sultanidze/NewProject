@@ -238,6 +238,18 @@ $(document).ready(function(){
 	    onInit: phoneNumFill,
 	    onChange: phoneNumFill
 	});
+	$("#form_catalog select").selectric({
+		customClass: {
+	      prefix: 'selectriccatalog', // Type: String.  Description: Prefixed string of every class name.
+	      camelCase: false     // Type: Boolean. Description: Switch classes style between camelCase or dash-case.
+	    },
+	    onInit: function() {
+			$(".selectriccatalog-wrapper>.selectriccatalog-items ul>li.disabled").remove();	//прибираємо з меню неактивний пункт (placeholder)
+		},
+		onChange: function() {
+		    $(this).parents(".selectriccatalog-wrapper").find(".selectriccatalog .label").css("color", "#3b5e8a");
+		}
+	});
 
 //slider for map radius (uses jQuery UI)
 	var refreshRadius = function(){
@@ -257,6 +269,11 @@ $(document).ready(function(){
       	},
       	slide: refreshRadius,
       	change: refreshRadius
+	});
+//seotext readmore
+	$(".b-readmore").click(function(){
+		$(this).prev().addClass("visible").css("height", "auto");
+		$(this).fadeOut(300);
 	});
 	
 });
