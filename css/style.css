@@ -2846,6 +2846,133 @@ body>footer{
     font-size: 12px;
     line-height: 16px;
 }
+
+.lot_my{
+    padding-top: 25px;
+    padding-right: 30px;
+    padding-bottom: 25px;
+    padding-left: 5px;
+}
+.lot_my h4{
+    margin: 0 0 15px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.lot_active h4{
+    color: #0056a8;
+}
+.lot_inactive h4{
+    color: #8ca5af;
+}
+.lot_my aside + div{
+    padding-left: 15px;
+}
+.lot__info{
+    margin-bottom: 25px;
+    padding: 15px 15px 5px;
+    font-size: 12px;
+    background: #eaeef5;
+}
+.info__field{
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+.info__field:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 13px;
+    height: 13px;
+}
+.lot_active .field_place:before{
+    top: 2px;
+    background-image: url(../img/placeholder-tool-active.svg);
+}
+.lot_inactive .field_place:before{
+    top: 2px;
+    background-image: url(../img/placeholder-tool-inactive.svg);
+}
+.lot_active .field_rubric:before{
+    top: 2px;
+    background-image: url(../img/high-heel-active.svg);
+}
+.lot_inactive .field_rubric:before{
+    top: 2px;
+    background-image: url(../img/high-heel-inactive.svg);
+}
+.field_calendar{
+/*    margin-left: -10px;*/
+    margin-right: -10px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 55px;
+}
+.field_calendar:before{
+    content: '';
+    top: 3px;
+    left: 0;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+}
+.lot_active .field_calendar:before{
+    background-image: url(../img/calendar-active.svg);
+}
+.lot_inactive .field_calendar:before{
+    background-image: url(../img/calendar-inactive.svg);
+}
+.lot_active .field_views:before{
+    width: 21px;
+    height: 21px;
+    background-image: url(../img/eye-active.svg);
+}
+.lot_inactive .field_views:before{
+    width: 21px;
+    height: 21px;
+    background-image: url(../img/eye-inactive.svg);
+}
+.lot_active .field_propos:before{
+    left: 3px;
+    top: 2px;
+    background-image: url(../img/chat-active.svg);
+}
+.lot_inactive .field_propos:before{
+    left: 3px;
+    top: 2px;
+    background-image: url(../img/chat-inactive.svg);
+}
+.field_from{
+    margin-bottom: 10px;
+}
+.controls__link{
+    text-decoration: none;
+    font-size: 12px;
+}
+.controls__link:hover{
+    text-decoration: none;
+}
+.controls__link{
+    line-height: 31px;
+    margin-right: 10px;
+}
+.lot_inactive .controls__link,
+.lot_inactive .controls__link:hover{
+    color: #c2c2c2;
+    cursor: default;
+}
+.lot_inactive .controls__close,
+.lot_inactive .controls__close:hover{
+    background-color: #eaeaea;
+    border: 1px solid #eaeaea;
+    color: #c2c2c2;
+    cursor: default;
+}
+.controls__close{
+    float: right;
+    max-width: 100px;
+}
+
 .section_pagination{
     margin-bottom: 70px;
 }
@@ -3004,6 +3131,24 @@ body>footer{
 	.b-form_catalog .wrap_area .selectriccatalog-wrapper{
 	    width: calc(30% - 10px);
 	}
+	.lot_my{
+		padding: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+	}
+    .lot__info{
+        margin-bottom: 15px;
+    }
+    .field_calendar{
+        margin-left: -10px;
+        padding-left: 24px;
+    }
+    .field_calendar:before{
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
 }
 @media screen and (max-width: 991px){
     .footer_main h3 {
@@ -3029,6 +3174,19 @@ body>footer{
 	.b-form_catalog .wrap_area .selectriccatalog-wrapper{
 	    width: calc(35% - 10px);
 	}
+    .info__field{
+        margin-left: 30px;
+    }
+    .field_calendar{
+        margin-left: 0;
+        padding-left: 55px;
+    }
+    .field_calendar:before{
+        top: 1px;
+        left: 28px;
+        width: 22px;
+        height: 22px;
+    }
 }
 @media screen and (max-width: 797px){
     .ajax_newInAds, .ajax_newInBlog{
@@ -3139,9 +3297,18 @@ body>footer{
 		/*width: calc(100% - 20px);*/
 		margin: 0 10px 10px 5px;
 	}
-	@media screen and (max-width: 490px){
-
-	}
+    .controls__close {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    .controls__link{
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 490px){
+    
 }
 /*-end------ media queries-------*/
 
