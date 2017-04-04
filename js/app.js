@@ -57,8 +57,8 @@ $(document).ready(function(){
 		// L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {	// шар зображення карти
 		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {	// шар зображення карти
 			subdomains: ["a", "b", "c"],
-	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
+		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
 
 	var markers = L.markerClusterGroup();
 	var geoDataSuccess = function(data){	//function fired after succesfull geoJson data ajax load
@@ -87,17 +87,18 @@ $(document).ready(function(){
 		,geoDataUrl
 		;
 	geoDataUrl = geoDataUrlBase;
-	// $.get("./ajax/map.json", {}, geoDataSuccess);
+	// $.get("./ajax/map.json", {}, geoDataSuccess);   
 
 	//map markers request form
-		var  $form = $(this).parents("#form_search")
-			,$search = $form.find("#search")
-			,$rubric = $form.find("#rubric")
-			,$city = $form.find("#city")
-			,$dateRange = $form.find("#dateRange")
-			,$radius = $form.find("#radius")
-			,$sellOrBuy = $form.find("#sellOrBuy")
-			;
+	var  $form = $("#form_search")
+		,$search = $form.find("#search")
+		,$rubric = $form.find("#rubric")
+		,$city = $form.find("#city")
+		,$dateRange = $form.find("#dateRange")
+		,$radius = $form.find("#radius")
+		,$sellOrBuy = $form.find("input[name='sellOrBuy']")
+		;
+
 	$(".map-box #form_search button[type='submit']").click(function(event){
 		event.preventDefault();
 		// geoDataUrl = geoDataUrlBase + "?search=" + $search.val() + "&rubric=" + $rubric.val() + "&city=" + $city.val() + "&dateRange=" + $dateRange.val() + "&radius=" + $radius.val() + "&sellOrBuy=" + $sellOrBuy.val();
@@ -109,7 +110,7 @@ $(document).ready(function(){
 			city: $city.val(),
 			dateRange: $dateRange.val(),
 			radius: $radius.val(),
-			sellOrBuy: $sellOrBuy.val()
+			sellOrBuy: $sellOrBuy.filter(":checked").val()
 		}, geoDataSuccess);
 	});
 	$(".map-box #form_search button[type='submit']").trigger("click");
@@ -238,6 +239,29 @@ $(document).ready(function(){
 	    onInit: phoneNumFill,
 	    onChange: phoneNumFill
 	});
+
+//slider for map radius (uses jQuery UI)
+	var refreshRadius = function(){	//записуватимемо значення jQuery UI слайдера в прихований html повзунок
+		var radius = $(this).slider("value");
+		$(this).parents(".wrap__slider").find("input[type='range']").val(radius);
+		$(this).parents(".row").find(".span_radius").text(radius);
+		// console.log($(this).parents(".row").find(".span_radius"))
+	}
+
+	var jqUiSlider = $( "#slider" ).slider({
+		range: "min",
+		max: 100,	// максимальне значення
+      	value: 12,	//початкове значення
+      	create: function(){
+      		var radius = $(this).slider("value");
+			$(this).parents(".wrap__slider").find("input[type='range']").val(radius).addClass("sr-only");	//ховаємо html повзунок
+      	},
+      	slide: refreshRadius,
+      	change: refreshRadius
+	});
+
+//=catalog.html =====================
+// selects in form
 	$("#form_catalog select").selectric({
 		customClass: {
 	      prefix: 'selectriccatalog', // Type: String.  Description: Prefixed string of every class name.
@@ -250,30 +274,109 @@ $(document).ready(function(){
 		    $(this).parents(".selectriccatalog-wrapper").find(".selectriccatalog .label").css("color", "#3b5e8a");
 		}
 	});
+//підвантажуватимемо маркери при зміні значень в полях форми
+	var  $catalogForm = $("#form_catalog");
 
-//slider for map radius (uses jQuery UI)
-	var refreshRadius = function(){
-		var radius = $(this).slider("value");
-		$(this).parents(".wrap__slider").find("input[type='range']").val(radius);
-		$(this).parents(".row").find(".span_radius").text(radius);
-		console.log($(this).parents(".row").find(".span_radius"))
+	if ($catalogForm[0]){
+		$city = $catalogForm.find("#city");
+		$radius = $catalogForm.find("#radius");
+		$rubric = $catalogForm.find("#rubric");
+		$sellOrBuy = $catalogForm.find("input[name='sellOrBuy']");
+		
+		var  $district = $catalogForm.find("#district")
+			,$sort = $catalogForm.find("#sort")
+			,$view = $catalogForm.find("input[name='view']")
+			;
+
+		$catalogForm.find("input, select").change(function(){
+			if ($(this).attr("name")=="view"){	//не перезавантажуватимемо маркери при зміні вигляду (плитка/список)
+				return;
+			} else{
+				markers.clearLayers();	//очистимо карту від маркерів
+				$.get(geoDataUrlBase, {	//завнтажимо новий geojson
+					city: $city.val(),
+					radius: $radius.val(),
+					rubric: $rubric.val(),
+					sellOrBuy: $sellOrBuy.filter(":checked").val(),
+					district: $district.val(),
+					sort: $sort.val()
+				}, function(data){
+						geoDataSuccess(data);	//наносимо маркери із отриманого geojson
+						
+						// запишемо нові об'яви і нову пагінацію
+						if ($view.filter(":checked").val()=="list"){
+							$.get("./ajax/_catalogue-list.html", {
+								city: $city.val(),
+								radius: $radius.val(),
+								rubric: $rubric.val(),
+								sellOrBuy: $sellOrBuy.filter(":checked").val(),
+								district: $district.val(),
+								sort: $sort.val(),
+								view: "list"
+							}, function(data1) {
+								$(".ajax_catalog_view").html(data1);
+							});
+							$.get("./ajax/_pagination-list.html", {
+								city: $city.val(),
+								radius: $radius.val(),
+								rubric: $rubric.val(),
+								sellOrBuy: $sellOrBuy.filter(":checked").val(),
+								district: $district.val(),
+								sort: $sort.val(),
+								view: "list"
+							}, function(data1) {
+								$(".ajax_pagination").html(data1);
+							});
+						} else if ($view.filter(":checked").val()=="tiles") {
+							$.get("./ajax/_catalogue-tiles.html", {
+								city: $city.val(),
+								radius: $radius.val(),
+								rubric: $rubric.val(),
+								sellOrBuy: $sellOrBuy.filter(":checked").val(),
+								district: $district.val(),
+								sort: $sort.val(),
+								view: "tiles"
+							}, function(data1) {
+								$(".ajax_catalog_view").html(data1);
+							});
+							$.get("./ajax/_pagination-tiles.html", {
+								city: $city.val(),
+								radius: $radius.val(),
+								rubric: $rubric.val(),
+								sellOrBuy: $sellOrBuy.filter(":checked").val(),
+								district: $district.val(),
+								sort: $sort.val(),
+								view: "tiles"
+							}, function(data1) {
+								$(".ajax_pagination").html(data1);
+							});
+						}
+				});
+			}
+		});
+		$("label[for='sell']").click();
 	}
+	
 
-	var jqUiSlider = $( "#slider" ).slider({
-		range: "min",
-		max: 100,
-      	value: 12,
-      	create: function(){
-      		var radius = $(this).slider("value");
-			$(this).parents(".wrap__slider").find("input[type='range']").val(radius).addClass("sr-only");
-      	},
-      	slide: refreshRadius,
-      	change: refreshRadius
-	});
+//ajax list/tiles view
+	var  $listBtn = $catalogForm.find("label[for='list']")
+		,$tilesBtn = $catalogForm.find("label[for='tiles']")
+		;
+
+	$listBtn.click(function(){	//підвантажує об'яви у вигляді списку
+		$(".ajax_catalog_view").load("./ajax/_catalogue-list.html");
+		$(".ajax_pagination").load("./ajax/_pagination-list.html");
+	})
+	$tilesBtn.click(function(){	//підвантажує об'яви у вигляді плитки
+		$(".ajax_catalog_view").load("./ajax/_catalogue-tiles.html");
+		$(".ajax_pagination").load("./ajax/_pagination-tiles.html");
+	})
+	$listBtn.trigger("click");	//завантажимо спочатку об'яви у вигляді списка'
+
 //seotext readmore
 	$(".b-readmore").click(function(){
-		$(this).prev().addClass("visible").css("height", "auto");
-		$(this).fadeOut(300);
+		$(this).prev().addClass("visible").css("height", "auto");	//приховуємо білий градієнт і показуємо увесь текст
+		$(this).fadeOut(300);	// ховаємо кнопку
 	});
 	
 });
