@@ -379,4 +379,9 @@ $(document).ready(function(){
 		$(this).fadeOut(300);	// ховаємо кнопку
 	});
 	
+// like activation
+	$(".otherAd__like").click(function(event){
+		event.stopPropagation();
+		$(this).toggleClass("otherAd__like_active");
+	})
 });
