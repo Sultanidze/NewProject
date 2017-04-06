@@ -380,8 +380,53 @@ $(document).ready(function(){
 	});
 	
 // like activation
-	$(".otherAd__like").click(function(event){
-		event.stopPropagation();
-		$(this).toggleClass("otherAd__like_active");
+	$(".likeBlock").click(function(event){
+		event.preventDefault();
+		$(this).toggleClass("likeBlock_active");
 	})
+// слайдер в сторінці лота
+	// ініціалізація
+	var $otherAdsSlick = $("#otherAds>.row").slick({
+		lazyLoad: 'ondemand',
+		arrows: false,
+		infinite: false,
+		speed: 300,
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		responsive: [{
+				breakpoint: 1200,
+				settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+				}
+		}]
+	});
+	//add buttons to otherAds slider
+	var  $prevBtnOther = $otherAdsSlick.parents(".section_otherAds").find("a.prevBtn")
+		,$nextBtnOther = $otherAdsSlick.parents(".section_otherAds").find("a.nextBtn")
+		;
+
+	$prevBtnOther.click(function(event){
+		event.preventDefault();
+		$otherAdsSlick.slick("slickPrev");
+	});	
+	$nextBtnOther.click(function(event){
+		event.preventDefault();
+		$otherAdsSlick.slick("slickNext");
+	});
+
 });
