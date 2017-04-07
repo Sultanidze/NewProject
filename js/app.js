@@ -52,6 +52,7 @@ $(document).ready(function(){
 	});
 
 // map initialization (Leaflet.js plugin)
+	if ($("#map")[0]){	// uinitialize if map container exists
 	var map = L.map('map').setView([50.4036, 30.4812], 11);	//створюємо карту, виставляємо координати + зум
 	// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {	// шар зображення карти
 		// L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {	// шар зображення карти
@@ -114,7 +115,7 @@ $(document).ready(function(){
 		}, geoDataSuccess);
 	});
 	$(".map-box #form_search button[type='submit']").trigger("click");
-
+	} // if end
 //ajax ads catalog load
 	var  $rubricsAjax = $(".ajax_rubrics").load("./ajax/_buy-catalogue.html")	// before proposition buttons click
 	//
@@ -435,4 +436,27 @@ $(document).ready(function(){
 			;
 		$(this).parents(".lot__images").find(".lot__image_large img").attr("src", srcSmall);	// покажемо у великому зображенні клікнуте фото
 	})
+// authentification/registration page
+	$(".authentification .nav-tabs>li>a").click(function(event){
+		event.preventDefault();
+		if (!$(this).parent().hasClass("active")){
+			var  $authBlock = $(this).parents(".authentification")
+				,$enterLI = $authBlock.find("#authEnter").parent()
+				,$regLI = $authBlock.find("#authReg").parent()
+				,$enterForm = $("#formAuth")
+				,$regForm = $("#formReg")
+				;
+			$(this).parent().toggleClass("active");
+			if ($(this).attr("id") == "authEnter"){
+				$regForm.slideUp(400);
+				$enterForm.slideDown(400);
+				$regLI.toggleClass("active");
+			} else if ($(this).attr("id") == "authReg") {
+				
+				$enterForm.slideUp(400);
+				$regForm.slideDown(400);
+				$enterLI.toggleClass("active");
+			}
+		}
+	});
 });

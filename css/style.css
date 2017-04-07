@@ -1970,12 +1970,6 @@ html .ui-button.ui-state-disabled:active {
     padding-right: 15px;
     line-height: 40px;
 }
-@media screen and (min-width: 768px){
-    .navbar-nav>li>a {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
 .navbar-default .navbar-right>li>a{
     font-size: 8px;
     color: #8ca5af;
@@ -3586,8 +3580,289 @@ body>footer{
     color: #0056a8;
 }
 
+.section_auth{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.container_auth{
+    margin: 0 auto;
+    max-width: 400px;
+}
+.authentification{
+    border: 1px solid #eaebec;
+    padding: 7% 13% 10%;
+}
+.authentification h3{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.authentification .nav-tabs {
+    border-bottom: none;
+    font-size: 0;
+}
+.authentification .nav-tabs>li {
+    float: none;
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 0;
+}
+.authentification .nav-tabs>li>a {
+    text-align: center;
+    margin-right: 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #e6e6e6;
+    line-height: 1.42857143;
+    font-size: 14px;
+    font-weight: 700;
+    color: #444c46;
+    background-color: #fff;
+}
+.authentification .nav-tabs>li.active>a, .authentification .nav-tabs>li.active>a:focus, .authentification .nav-tabs>li.active>a:hover {
+/*    color: #555;*/
+    cursor: default;
+    border: none;
+    border-bottom: 2px solid #fe7117;
+}
+.footer_auth{
+    position: relative;
+    margin-top: 4px;
+    border-top: 1px dashed #c4c4c4;
+    padding-top: 20px;
+}
+.footer__decor{
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 24px;
+    line-height: 5px;
+    font-size: 14px;
+    color: #444c47;
+    background-color: #fff;
+}
+.auth__soc{
+    text-align: left;
+    margin-bottom: 8px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    padding: 0;
+    line-height: 40px;
+    overflow: hidden;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+.auth__soc:hover{
+    opacity: 0.8;
+}
+.auth__soc:before{
+/*    content: '';*/
+    display: inline-block;
+    width: 1px;
+    line-height: 40px;
+}
+.soc__logo{
+    text-align: center;
+    display: inline-block;
+    width: 23%;
+/*    line-height: 40px;*/
+    font-size: 0;
+}
+.auth__soc span{
+    vertical-align: top;
+    
+}
+.soc__logo img{
+/*    height: 100%;*/
+    display: inline-block;
+    max-width: 60px;
+    max-height: 40px;
+}
+.auth__soc_vk{
+    background-color: #4d75a3;
+    color: #fff;
+}
+.auth__soc_fb{
+    background-color: #3d5999;
+    color: #fff;
+}
+.auth__soc_gplus{
+    background-color: #f0f2f5;
+    color: #3d3d3d;
+}
+.auth__agreement{
+    margin-top: 35px;
+    padding-left: 57px;
+    font-size: 12px;
+}
+.auth__agreement img{
+    position: absolute;
+    left: 0;
+}
+.auth__agreement p{
+    margin: 0;
+    padding-top: 3px;
+    line-height: 16px;
+}
+.auth__agreement a{
+    position: relative;
+    color: #fe7117;
+    display: inline-block;
+    text-decoration: none;
+}
+.auth__agreement a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    display: inline-block;
+    height: 1px;
+    width: 0;
+    background-color: #fe7117;
+    -webkit-transition: width 0.3s;
+    -o-transition: width 0.3s;
+    transition: width 0.3s;
+}
+.auth__agreement a:hover:after,
+.auth__agreement a:focus:after {
+    width: 100%;
+}
+
+.authentification__forms{
+   
+}
+.form_auth{
+    padding-top: 19px;
+}
+.form_auth input{
+    margin-bottom: 8px;
+    height: auto;
+    padding: 0 10px 0 55px;
+    line-height: 38px;
+    font-size: 14px;
+    color: #fe7117;
+}
+
+.form_auth input::-webkit-input-placeholder{
+    color: #cdcdcd;
+    opacity: 1;
+}
+.form_auth input:focus::-webkit-input-placeholder{
+    color: transparent
+}
+.form_auth input::-moz-placeholder{
+    color: #cdcdcd;
+    opacity: 1;
+}
+.form_auth input:focus::-moz-placeholder{
+    color: transparent
+}
+.form_auth input:-moz-placeholder{
+    color: #cdcdcd;
+    opacity: 1;
+}
+.form_auth input:focus:-moz-placeholder{
+    color: transparent
+}
+.form_auth input:-ms-input-placeholder{
+    color: #cdcdcd;
+    opacity: 1;
+}
+.form_auth input:focus:-ms-input-placeholder{
+    color: transparent;
+/*    opacity: 1;*/
+}
+.form_auth input{
+    background-repeat: no-repeat;
+    background-position: 18px 8px;
+}
+.form_auth input[name="email"]{
+    background-image: url(../img/icon-email.png);
+}
+.form_auth input[name="email"]:focus{
+    background-image: url(../img/icon-active-email.png);
+}
+.form_auth input[name="password"]{
+    background-image: url(../img/icon-password.png);
+}
+.form_auth input[name="password"]:focus{
+    background-image: url(../img/icon-active-password.png);
+}
+.form_auth input[name="name"]{
+    background-image: url(../img/icon-person.png);
+}
+.form_auth input[name="name"]:focus{
+    background-image: url(../img/icon-active-person.png);
+}
+.form_auth input[name="phone"]{
+    background-image: url(../img/iicon-person.png);
+}
+.form_auth input[name="phone"]:focus{
+    background-image: url(../img/icon-person.png);
+}
+
+.form_auth button{
+    margin-bottom: 15px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    padding: 0;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #fe7117;
+    overflow: hidden;
+}
+.form_auth .forget{
+    color: #454747;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+.forget a{
+    position: relative;
+    display: inline-block;
+    color: #fe7117;
+    cursor: pointer;
+    text-decoration: none;
+}
+.forget a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    display: inline-block;
+    height: 1px;
+    width: 0;
+    background-color: #fe7117;
+    -webkit-transition: width 0.3s;
+    -o-transition: width 0.3s;
+    transition: width 0.3s;
+}
+.forget a:hover:after,
+.forget a:focus:after {
+    width: 100%;
+}
+
+#formReg{
+    display: none;
+}
+
 /*-------media queries-------*/
 @media screen and (min-width: 768px){
+    .navbar-nav>li>a {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .container>.navbar-header {
+        margin-left: 15px;
+    }
     .navbar-default .navbar-collapse{
         border-color: transparent;    
     }
