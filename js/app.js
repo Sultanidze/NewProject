@@ -428,5 +428,11 @@ $(document).ready(function(){
 		event.preventDefault();
 		$otherAdsSlick.slick("slickNext");
 	});
-
+// галерея в лоті 
+	$(".lot__image_small").click(function(){
+		var  srcSmall = $(this).find("img").attr("src")	//адреса клікнутого фото
+			// ,srcLarge
+			;
+		$(this).parents(".lot__images").find(".lot__image_large img").attr("src", srcSmall);	// покажемо у великому зображенні клікнуте фото
+	})
 });

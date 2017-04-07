@@ -3359,6 +3359,7 @@ body>footer{
     border: 1px solid #eaebec;
 }
 .lot__images_side{
+    margin-right: -15px;
     border-right: 1px solid #eaebec;
 }
 .lot__image_side{
@@ -3379,6 +3380,7 @@ body>footer{
     position: relative;
     padding: 20px;
     height: 165px;
+    cursor: pointer;
 }
 .lot__image_small img{
     max-height: 125px;
