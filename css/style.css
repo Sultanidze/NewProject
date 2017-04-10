@@ -4011,8 +4011,8 @@ left: 0;
 }
 .form_create label{
     float: left;
-    width: 20%;
-    padding-right: 20px;
+    width: 90px;
+    padding-right: 15px;
     text-align: right;
     font-size: 14px;
     line-height: 39px;
@@ -4021,21 +4021,22 @@ left: 0;
 .form_create input{
     display: inline-block;
     padding-left: 9px;
-    width: 80%;
+    width: calc(100% - 90px);
     background-image: none !important;
 }
 .form_create select{
     margin-bottom: 10px;
     display: inline-block;
-    width: 80%;
+    width: calc(100% - 90px);
     height: 39px;
     border: 1px solid #ccc;
     border-radius: 3px;
     background-color: #fff;
 }
 .form_create .selectriccatalog-wrapper{
+    margin-bottom: 10px;
     display: inline-block;
-    width: 80%;
+    width: calc(100% - 90px);
 }
 .form_create .selectriccatalog{
    border-color: #ccc;
@@ -4053,9 +4054,13 @@ left: 0;
 .form_create textarea{
     display: inline-block;
     padding: 9px;
-    width: 80%;
+    width: calc(100% - 90px);
     line-height: 18px;
     resize: none;
+}
+.map-box_createLot{
+    height: 40vh;
+    margin-bottom: 10px;
 }
 .block_buttons{
     text-align: center;

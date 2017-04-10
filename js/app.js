@@ -472,4 +472,34 @@ $(document).ready(function(){
 		    $(this).parents(".selectriccatalog-wrapper").find(".selectriccatalog .label").css("color", "#3b5e8a");
 		}
 	});
+// map in create.html
+	var  lotCoordinates
+		,lotMarker;
+	if ($("#mapNewLot")[0]){	// uinitialize if map container exists
+		var map = L.map('mapNewLot').setView([50.4036, 30.4812], 11);	//створюємо карту, виставляємо координати + зум
+		// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {	// шар зображення карти
+		// L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {	// шар зображення карти
+		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {	// шар зображення карти
+			subdomains: ["a", "b", "c"],
+		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+
+		map.on("click", function(e){
+			// map.clearLayers();
+			// var markers = L.markerClusterGroup();
+			if (lotMarker){
+				map.removeLayer(lotMarker);
+			}
+			lotCoordinates = e.latlng;
+			lotMarker = new L.marker(e.latlng, {draggable:'true'});
+			$("#formCreate #address").val(lotCoordinates);
+			lotMarker.on('dragend', function(event){
+			    lotMarker = event.target;
+			    lotCoordinates = lotMarker.getLatLng();
+			    lotMarker.setLatLng(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng),{draggable:'true'});
+			    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng))
+			});
+			map.addLayer(lotMarker);
+		});
+	}
 });
