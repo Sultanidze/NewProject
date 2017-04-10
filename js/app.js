@@ -134,7 +134,7 @@ $(document).ready(function(){
 	$(".ajax_newInAds").load("./ajax/_ads-new.html", function(){
 		//new in ads slider initialization
 		var $newInAdsSlick = $("#newInAds>.ajax_newInAds").slick({
-			lazyLoad: 'ondemand',
+			// lazyLoad: 'ondemand',
 			arrows: false,
 			infinite: false,
 			speed: 300,
@@ -174,7 +174,7 @@ $(document).ready(function(){
 	$(".ajax_newInBlog").load("./ajax/_blog-new.html", function(){
 		//new in blog slider initialization
 		var $newInBlogSlick = $("#newInBlog>.row").slick({
-			lazyLoad: 'ondemand',
+			// lazyLoad: 'ondemand',
 			arrows: false,
 			infinite: false,
 			speed: 300,
@@ -457,6 +457,19 @@ $(document).ready(function(){
 				$regForm.slideDown(400);
 				$enterLI.toggleClass("active");
 			}
+		}
+	});
+// select in lot creation
+	$("#formCreate select").selectric({
+		customClass: {
+	      prefix: 'selectriccatalog', // Type: String.  Description: Prefixed string of every class name.
+	      camelCase: false     // Type: Boolean. Description: Switch classes style between camelCase or dash-case.
+	    },
+	    onInit: function() {
+			$(".selectriccatalog-wrapper>.selectriccatalog-items ul>li.disabled").remove();	//прибираємо з меню неактивний пункт (placeholder)
+		},
+		onChange: function() {
+		    $(this).parents(".selectriccatalog-wrapper").find(".selectriccatalog .label").css("color", "#3b5e8a");
 		}
 	});
 });

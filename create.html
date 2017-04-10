@@ -57,19 +57,31 @@
                 </header>
                 <div class="row">
                     <div class="col-sm-9 col-xs-12">
-                        <form action="" class="form_auth form_settings form_create">
+                        <form action="" class="form_auth form_settings form_create" id="formCreate">
 <!--                                            <h5>Изменить контактные данные</h5>-->
                             <label for="lotName">Заголовок</label>
                             <input type="text" class="form-control" id="lotName" placeholder="Заголовок" name="lotName" required>
-                            <label for="lotRubric">Рубрика</label>
-                            <input type="text" class="form-control" id="lotRubric" placeholder="Рубрика" name="lotRubric" required>
+<!--                            <input type="text" class="form-control" id="lotRubric" placeholder="Рубрика" name="lotRubric" required>-->
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <label for="lotRubric">Рубрика</label>
+                                        <select name="lotRubric" id="lotRubric">
+                                            <option value="" hidden selected disabled>Рубрика</option>
+                                            <option value="1">Рубрика 1</option>
+                                            <option value="2">Рубрика 2</option>
+                                            <option value="3">Рубрика 3</option>
+                                        </select>
+                                    </div>
+                                </div>
                             <label for="description">Описание</label>
                             <textarea name="lotDescription" id="lotDescription" rows="4" placeholder="Описание"  class="form-control"></textarea>
                             
                             <label for="images" >Фото</label>
                             <input type="file" class="form-control" name="files" multiple="" accept="image/*" id="images">
-                            <label for="cityReg">Город</label>
-                            <input type="text" class="form-control" id="cityReg" placeholder="Город" name="city" required>
+                            <label for="city">Город</label>
+                            <input type="text" class="form-control" id="city" placeholder="Город" name="city" required>
+                            <label for="address">Адрес</label>
+                            <input type="text" class="form-control" id="address" placeholder="Адрес" name="address" required>
                             <label for="name" class="">Имя</label>
                             <input type="text" class="form-control" id="name" placeholder="Имя" name="name" required>
                             <label for="phoneReg">Телефон</label>

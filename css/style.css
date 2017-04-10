@@ -4024,6 +4024,26 @@ left: 0;
     width: 80%;
     background-image: none !important;
 }
+.form_create select{
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 80%;
+    height: 39px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+}
+.form_create .selectriccatalog-wrapper{
+    display: inline-block;
+    width: 80%;
+}
+.form_create .selectriccatalog .label{
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    color: #ccc;
+}
 .form_create textarea{
     display: inline-block;
     padding: 9px;
@@ -4031,7 +4051,6 @@ left: 0;
     line-height: 18px;
     resize: none;
 }
-
 .block_buttons{
     text-align: center;
 }
