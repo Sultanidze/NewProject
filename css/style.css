@@ -3739,7 +3739,8 @@ body>footer{
 .form_auth{
     padding-top: 19px;
 }
-.form_auth input{
+.form_auth input,
+.form_auth textarea{
     margin-bottom: 8px;
     height: auto;
     padding: 0 10px 0 55px;
@@ -3747,29 +3748,36 @@ body>footer{
     font-size: 14px;
     color: #fe7117;
 }
-
-.form_auth input::-webkit-input-placeholder{
+/* --- form_auth placeholders --- */
+.form_auth input::-webkit-input-placeholder,
+.form_auth textarea::-webkit-input-placeholder{
     color: #cdcdcd;
     opacity: 1;
 }
-.form_auth input:focus::-webkit-input-placeholder{
+.form_auth input:focus::-webkit-input-placeholder,
+.form_auth textarea:focus::-webkit-input-placeholder{
     color: transparent
 }
-.form_auth input::-moz-placeholder{
+.form_auth input::-moz-placeholder,
+.form_auth textarea::-moz-placeholder{
     color: #cdcdcd;
     opacity: 1;
 }
-.form_auth input:focus::-moz-placeholder{
+.form_auth input:focus::-moz-placeholder,
+.form_auth textarea:focus::-moz-placeholder{
     color: transparent
 }
-.form_auth input:-moz-placeholder{
+.form_auth input:-moz-placeholder,
+.form_auth textarea:-moz-placeholder{
     color: #cdcdcd;
     opacity: 1;
 }
-.form_auth input:focus:-moz-placeholder{
+.form_auth input:focus:-moz-placeholder,
+.form_auth textarea:focus:-moz-placeholder{
     color: transparent
 }
-.form_auth input:-ms-input-placeholder{
+.form_auth input:-ms-input-placeholder,
+.form_auth textarea:-ms-input-placeholder{
     color: #cdcdcd;
     opacity: 1;
 }
@@ -3777,6 +3785,8 @@ body>footer{
     color: transparent;
 /*    opacity: 1;*/
 }
+/* --- form_auth placeholders end --- */
+
 .form_auth input{
     background-repeat: no-repeat;
     background-position: 18px 8px;
@@ -3995,6 +4005,42 @@ left: 0;
 }
 /* checkbox stylization end */
 /*-------------------------------------*/
+
+.section_newLot{
+    margin-bottom: 40px;
+}
+.form_create label{
+    float: left;
+    width: 20%;
+    padding-right: 20px;
+    text-align: right;
+    font-size: 14px;
+    line-height: 39px;
+    color: #000;
+}
+.form_create input{
+    display: inline-block;
+    padding-left: 9px;
+    width: 80%;
+    background-image: none !important;
+}
+.form_create textarea{
+    display: inline-block;
+    padding: 9px;
+    width: 80%;
+    line-height: 18px;
+    resize: none;
+}
+
+.block_buttons{
+    text-align: center;
+}
+.form_create button{
+/*    display: block;*/
+    width: auto;
+    margin: 0 10px;
+    padding: 0 10px;
+}
 
 /*-------media queries-------*/
 @media screen and (min-width: 768px){
