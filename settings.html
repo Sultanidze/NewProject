@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>НП ласкаво просимо</title>
+    <title>НП настройки</title>
 
     <!-- Bootstrap -->
 <!--    <link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -50,64 +50,100 @@
     </nav>
     </header>
     <main>
-        <section class="section_auth">
+        <section class="section_settings">
             <div class="container">
-                <div class="container_auth">
-                    <div class="authentification">
-                        <header>
-                            <img alt="Brand" src="img/logo.png">
-                            <h3>Добро пожаловать!</h3>
-                        </header>
-                        <ul class="nav nav-tabs">
-                            <li role="presentation" class="active"><a href="#" id="authEnter">Вход</a></li>
-                            <li role="presentation"><a href="#" id="authReg">Регистрация</a></li>
-                        </ul>
-                        <div class="authentification__forms">
-                            <form action="" class="form_auth" id="formAuth">
-                                <label for="emailAuth" class="sr-only">E-mail</label>
-                                <input type="email" class="form-control" id="emailAuth" placeholder="E-mail" name="email" required>
-                                <label for="passwordAuth" class="sr-only">Пароль</label>
-                                <input type="password" class="form-control" id="passwordAuth" placeholder="Пароль" name="password" required>
-                                <button type="submit">Войти</button>
-                                <p class="forget">Забыли пароль? <a href="./remind.html">Напомнить пароль</a></p>
-                            </form>
-                            <form action="" class="form_auth" id="formReg">
-                                <label for="nameReg" class="sr-only">Имя</label>
-                                <input type="text" class="form-control" id="nameReg" placeholder="Имя" name="name" required>
-                                <label for="emailReg" class="sr-only">E-mail</label>
-                                <input type="email" class="form-control" id="emailReg" placeholder="E-mail" name="email" required>
-                                <label for="passwordReg" class="sr-only">Пароль</label>
-                                <input type="password" class="form-control" id="passwordReg" placeholder="Пароль" name="password" required>
-                                <label for="phoneReg" class="sr-only">Телефон</label>
-                                <input type="text" class="form-control" id="phoneReg" placeholder="Телефон" name="phone" required>
-                                <label for="cityReg" class="sr-only">Город</label>
-                                <input type="text" class="form-control" id="cityReg" placeholder="Город" name="city" required>
-                                <button type="submit">Зарегистрироваться</button>
-                            </form>
-                        </div>
-                        <div class="footer_auth">
-                            <span class="footer__decor">или</span>
-                            <button class="auth__soc auth__soc_vk">
-                                <span class="soc__logo"><img src="./img/vk.png" alt="social network"></span>
-                                Войти через ВКонтакте
-                            </button>
-                            <button class="auth__soc auth__soc_fb">
-                                <span class="soc__logo"><img src="./img/fb.png" alt="social network"></span>
-                                <span>Войти через Facebook</span>
-                            </button>
-                            <button class="auth__soc auth__soc_gplus">
-                                <span class="soc__logo"><img src="./img/g+.png" alt="social network"></span>
-                                <span>Войти через Google+</span>
-                            </button>
-                            <div class="auth__agreement">
-                                <img src="./img/buckler.png" alt="">
-                                <p>Регистрируясь или заходя на сайт, Вы принимаете условия <a href="#">Пользовательского соглашения.</a></p>
+                <header class="section__header section__header_catalog">
+                    <h2>Настройки</h2>
+                </header>
+                <div class="row">
+                    <div class="col-lg-3 col-lg-push-9 col-md-3 col-md-push-9 col-sm-4 col-sm-push-8 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <aside class="cabinet_aside">
+                                    <h4>Личный кабинет Игоря</h4>
+                                    <a href="" class="cabinet__link">
+                                        <span class="cabLink__info">26</span>
+                                        <span class="cabLink__text">Мои лоты</span>
+                                    </a>
+                                    <a href="" class="cabinet__link">
+                                        <span class="cabLink__info">4</span>
+                                        <span class="cabLink__text">Сообщения</span>
+                                    </a>
+                                    <a href="" class="cabinet__link">
+                                        <span class="cabLink__info">8</span>
+                                        <span class="cabLink__text">Закладки</span>
+                                    </a>
+                                    <a href="" class="cabinet__link cabinet__link_active">
+                                        <span class="cabLink__info cabLink__info_icon"><span class="glyphicon glyphicon-cog"></span></span>
+                                        <span class="cabLink__text">Настройки профиля</span>
+                                    </a>
+                                    <a href="" class="cabinet__link">
+                                        <span class="cabLink__info">!</span>
+                                        <span class="cabLink__text">Выйти из системы</span>
+                                    </a>
+                                </aside>
                             </div>
+                            <div class="col-sm-12 hidden-xs">
+                                <img src="./img/banner2.jpg" alt="" class="img-responsive bananer">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-lg-pull-3 col-md-9 col-md-pull-3 col-sm-8 col-sm-pull-4 col-xs-12">
+                        <div class="settings__forms">
+                            <div class="settings__block">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <form action="" class="form_auth form_settings">
+                                            <h5>Изменить контактные данные</h5>
+                                            <label for="nameReg" class="sr-only">Имя</label>
+                                            <input type="text" class="form-control" id="nameReg" placeholder="Имя" name="name" required>
+                                            <label for="phoneReg" class="sr-only">Телефон</label>
+                                            <input type="text" class="form-control" id="phoneReg" placeholder="Телефон" name="phone" required>
+                                            <label for="cityReg" class="sr-only">Город</label>
+                                            <input type="text" class="form-control" id="cityReg" placeholder="Город" name="city" required>
+                                            <button type="submit">Сохранить изменения</button>
+                                        </form>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <form action="" class="form_auth form_settings">
+                                            <h5>Изменить email-адрес</h5>
+                                            <label for="email" class="sr-only">E-mail</label>
+                                            <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" required>
+                                            <label for="emailNew" class="sr-only">Новый E-mail адрес</label>
+                                            <input type="email" class="form-control" id="emailNew" placeholder="Новый E-mail адрес" name="emailNew" required>
+                                            <label for="passwordReg" class="sr-only">Пароль</label>
+                                            <input type="password" class="form-control" id="passwordReg" placeholder="Пароль" name="password" required>
+                                            <button type="submit">Сохранить изменения</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings__block">
+                                <form action="" class="form_auth form_settings form_reminder">
+                                    <h5>Уведомления</h5>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <p>Ответы - сообщения о новых ответах на объявления.</p>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <input type="checkbox" id="reminderOnPhone" class="checkbox" name="reminderOnPhone" value="1">
+                                            <label for="reminderOnPhone">На телефон</label>
+                                            <input type="checkbox" id="reminderOnEmail" class="checkbox" name="reminderOnEmail" value="1">
+                                            <label for="reminderOnEmail">На E-mail</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit">Сохранить изменения</button>
+                                </form>
+                            </div>
+                            <form action="" class="form_auth form_settings form_del">
+                                <button type="submit">Удалить учетную запись</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
     </main>
     <footer>
         <section class="footer_main">

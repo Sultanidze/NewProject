@@ -3781,10 +3781,12 @@ body>footer{
     background-repeat: no-repeat;
     background-position: 18px 8px;
 }
-.form_auth input[name="email"]{
+.form_auth input[name="email"],
+.form_auth input[name="emailNew"]{
     background-image: url(../img/icon-email.png);
 }
-.form_auth input[name="email"]:focus{
+.form_auth input[name="email"]:focus,
+.form_auth input[name="emailNew"]:focus{
     background-image: url(../img/icon-active-email.png);
 }
 .form_auth input[name="password"]{
@@ -3800,10 +3802,16 @@ body>footer{
     background-image: url(../img/icon-active-person.png);
 }
 .form_auth input[name="phone"]{
-    background-image: url(../img/iicon-person.png);
+    background-image: url(../img/icon-phone.png);
 }
 .form_auth input[name="phone"]:focus{
-    background-image: url(../img/icon-person.png);
+    background-image: url(../img/icon-phone.png);
+}
+.form_auth input[name="city"]{
+    background-image: url(../img/icon-place.png);
+}
+.form_auth input[name="city"]:focus{
+    background-image: url(../img/icon-place.png);
 }
 
 .form_auth button{
@@ -3849,10 +3857,144 @@ body>footer{
 .forget a:focus:after {
     width: 100%;
 }
-
 #formReg{
     display: none;
 }
+.authentification header p{
+    margin-bottom: 20px;
+    color: #626061;
+}
+
+.settings__forms{
+    margin-top: 30px;
+    margin-bottom: 65px;
+    padding: 0 30px 30px;
+    border: 1px solid #eaebec;
+}
+.settings__block{
+    border-bottom: 1px solid #eaebec;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.settings__block h5{
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0056a8;
+}
+.settings__block p{
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #282828;
+}
+.form_settings{
+    padding-top: 20px;
+}
+.form_settings button{
+    margin-top: 10px;
+    width: 190px;
+    border-radius: 3px;
+    background-color: #0056a8;
+    font-size: 14px;
+}
+.form_reminder h5{
+    margin-bottom: 20px;
+}
+.form_reminder p{
+    margin-bottom: 10px;
+}
+.form_reminder input[type="checkbox"]{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.form_reminder label{
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    vertical-align: top;
+    line-height: 16px;
+    font-size: 12px;
+    color: #282828;
+}
+/*-------------------------------------*/
+/* checkbox stylization */
+/* IE8 and earlier standart checkbox */
+.checkbox {
+  margin: 1px 3px 0 0;
+    width: 12px;
+    height: 12px;
+}
+.checkbox + label {
+  cursor: pointer;
+}
+
+/*wrapper for the browser's form validation popups positioning when standart checkbox is hidden*/
+.b-wrap_checkbox{    
+    position: relative;
+}
+
+/* IE9 and modern browsers. */
+/* Hide standart checkbox */
+.checkbox:not(checked) {
+  position: absolute;
+left: 0;
+  width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    bottom: 0px;
+}
+.checkbox:not(checked) + label {
+  position: relative;
+  padding-left: 25px; /* place for checkbox */
+}
+/* background */
+.checkbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+    border: 1px solid #b9b9b9;
+  border-radius: 2px;
+  background: #fff;
+}
+/* tick */
+.checkbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background-image: url(../img/tick.png);
+  opacity: 0;
+  transition: opacity 100ms;
+    -moz-transition: opacity 100ms;
+    -webkit-transition: opacity 100ms;
+    -o-transition: opacity 100ms;
+}
+.checkbox + label:before{
+    transition: opacity 100ms;
+    -moz-transition: opacity 100ms;
+    -webkit-transition: opacity 100ms;
+    -o-transition: opacity 100ms;
+}
+.checkbox:hover + label:before{
+    opacity: 0.85;
+}
+/* show tick when checked */
+.checkbox:checked + label:after {
+  opacity: 1;
+  transition: opacity 100ms; 
+}
+/* checkbox stylization end */
+/*-------------------------------------*/
 
 /*-------media queries-------*/
 @media screen and (min-width: 768px){

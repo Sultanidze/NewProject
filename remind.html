@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>НП ласкаво просимо</title>
+    <title>НП нагадати пароль</title>
 
     <!-- Bootstrap -->
 <!--    <link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -56,33 +56,14 @@
                     <div class="authentification">
                         <header>
                             <img alt="Brand" src="img/logo.png">
-                            <h3>Добро пожаловать!</h3>
+                            <h3>Напомнить пароль</h3>
+                            <p>Введите электронный адрес, указаный при регистрации. На него будут высланы инструкции по востановлению пароля.</p>
                         </header>
-                        <ul class="nav nav-tabs">
-                            <li role="presentation" class="active"><a href="#" id="authEnter">Вход</a></li>
-                            <li role="presentation"><a href="#" id="authReg">Регистрация</a></li>
-                        </ul>
                         <div class="authentification__forms">
-                            <form action="" class="form_auth" id="formAuth">
+                            <form action="" class="form_auth" id="formRemind">
                                 <label for="emailAuth" class="sr-only">E-mail</label>
                                 <input type="email" class="form-control" id="emailAuth" placeholder="E-mail" name="email" required>
-                                <label for="passwordAuth" class="sr-only">Пароль</label>
-                                <input type="password" class="form-control" id="passwordAuth" placeholder="Пароль" name="password" required>
-                                <button type="submit">Войти</button>
-                                <p class="forget">Забыли пароль? <a href="./remind.html">Напомнить пароль</a></p>
-                            </form>
-                            <form action="" class="form_auth" id="formReg">
-                                <label for="nameReg" class="sr-only">Имя</label>
-                                <input type="text" class="form-control" id="nameReg" placeholder="Имя" name="name" required>
-                                <label for="emailReg" class="sr-only">E-mail</label>
-                                <input type="email" class="form-control" id="emailReg" placeholder="E-mail" name="email" required>
-                                <label for="passwordReg" class="sr-only">Пароль</label>
-                                <input type="password" class="form-control" id="passwordReg" placeholder="Пароль" name="password" required>
-                                <label for="phoneReg" class="sr-only">Телефон</label>
-                                <input type="text" class="form-control" id="phoneReg" placeholder="Телефон" name="phone" required>
-                                <label for="cityReg" class="sr-only">Город</label>
-                                <input type="text" class="form-control" id="cityReg" placeholder="Город" name="city" required>
-                                <button type="submit">Зарегистрироваться</button>
+                                <button type="submit">Отправить</button>
                             </form>
                         </div>
                         <div class="footer_auth">
