@@ -497,7 +497,8 @@ $(document).ready(function(){
 			    lotMarker = event.target;
 			    lotCoordinates = lotMarker.getLatLng();
 			    lotMarker.setLatLng(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng),{draggable:'true'});
-			    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng))
+			    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng));
+			    $("#formCreate #address").val(lotCoordinates);
 			});
 			map.addLayer(lotMarker);
 		});
