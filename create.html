@@ -67,11 +67,20 @@
                                         <label for="lotRubric">Рубрика</label>
                                         <select name="lotRubric" id="lotRubric">
                                             <option value="" hidden selected disabled>Рубрика</option>
-                                            <option value="1">Рубрика 1</option>
-                                            <option value="2">Рубрика 2</option>
-                                            <option value="3">&nbsp;&nbsp;&nbsp;Подрубрика 1</option>
-                                            <option value="4">&nbsp;&nbsp;&nbsp;Подрубрика 2</option>
-                                            <option value="5">Рубрика 3</option>
+                                            <optgroup label="Рубрика 1">
+                                                <option value="1">&nbsp;Подрубрика 1</option>
+                                                <option value="2">&nbsp;Подрубрика 2</option>
+                                            </optgroup>
+                                            <optgroup label="Рубрика 2">
+                                                <option value="3">&nbsp;Подрубрика 3</option>
+                                                <option value="4">&nbsp;Подрубрика 4</option>
+                                            </optgroup>
+                                            
+                                            <optgroup label="Рубрика 3">
+                                                <option value="5">&nbsp;Подрубрика 5</option>
+                                                <option value="6">&nbsp;Подрубрика 6</option>
+                                                <option value="7">&nbsp;Подрубрика 7</option>
+                                            </optgroup>
                                         </select>
                                     </div>
                                 </div>
@@ -86,6 +95,8 @@
 -->
                             <label for="address">Адрес</label>
                             <input type="text" class="form-control" id="address" placeholder="Адрес" name="address" required>
+                            <label for="coordinates">Координати</label>
+                            <input type="text" class="form-control" id="coordinates" placeholder="coordinates" name="coordinates" required>
 <!--
                             <label for="name" class="">Имя</label>
                             <input type="text" class="form-control" id="name" placeholder="Имя" name="name" required>
