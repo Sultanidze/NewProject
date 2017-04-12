@@ -3644,6 +3644,7 @@ body>footer{
     background-color: #fff;
 }
 .auth__soc{
+    display: block;
     text-align: left;
     margin-bottom: 8px;
     width: 100%;
@@ -3659,6 +3660,9 @@ body>footer{
 }
 .auth__soc:hover{
     opacity: 0.8;
+    text-decoration: none;
+/*    color: #fff;*/
+    cursor: pointer;
 }
 .auth__soc:before{
 /*    content: '';*/
@@ -3683,15 +3687,15 @@ body>footer{
     max-width: 60px;
     max-height: 40px;
 }
-.auth__soc_vk{
+a.auth__soc_vk{
     background-color: #4d75a3;
     color: #fff;
 }
-.auth__soc_fb{
+a.auth__soc_fb{
     background-color: #3d5999;
     color: #fff;
 }
-.auth__soc_gplus{
+a.auth__soc_gplus{
     background-color: #f0f2f5;
     color: #3d3d3d;
 }
