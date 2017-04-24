@@ -492,13 +492,15 @@ $(document).ready(function(){
 			}
 			lotCoordinates = e.latlng;
 			lotMarker = new L.marker(e.latlng, {draggable:'true'});
-			$("#formCreate #coordinates").val("широта: " + lotCoordinates.lat + "; долгота: " + lotCoordinates.lng + ";");
+			$("#formCreate #latitude").val(lotCoordinates.lat);
+			$("#formCreate #longitude").val(lotCoordinates.lng);
 			lotMarker.on('dragend', function(event){
 			    lotMarker = event.target;
 			    lotCoordinates = lotMarker.getLatLng();
 			    lotMarker.setLatLng(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng),{draggable:'true'});
 			    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng));
-			    $("#formCreate #coordinates").val("широта: " + lotCoordinates.lat + "; долгота: " + lotCoordinates.lng + ";");
+				$("#formCreate #latitude").val(lotCoordinates.lat);
+				$("#formCreate #longitude").val(lotCoordinates.lng);
 			});
 			map.addLayer(lotMarker);
 		});
