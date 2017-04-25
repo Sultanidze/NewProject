@@ -4022,6 +4022,23 @@ left: 0;
     line-height: 39px;
     color: #000;
 }
+.form_create .sellBuy{
+    margin-left: 85px;
+    margin-bottom: 10px;
+}
+.form_create .sellBuy:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.form_create .sr-only{
+    width: 1px;
+    height: 1px;
+}
+.form_create .label_radio{
+    text-align: left;
+    width: 150px;
+}
 .form_create input{
     display: inline-block;
     padding-left: 9px;
@@ -4341,6 +4358,9 @@ left: 0;
     }
     .section_otherAds .section__header{
         margin-bottom: 0;
+    }
+    .form_create .sellBuy{
+        margin-left: 0;
     }
 }
 @media screen and (max-width: 490px){
