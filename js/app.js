@@ -379,7 +379,25 @@ $(document).ready(function(){
 		$(this).prev().addClass("visible").css("height", "auto");	//приховуємо білий градієнт і показуємо увесь текст
 		$(this).fadeOut(300);	// ховаємо кнопку
 	});
-	
+
+// map in lot page
+	var	 lotLat = 50.45
+		,lotLng = 30.45
+		,lotMarker
+		,lotCoordinates
+		,lotIcon = L.divIcon({	// сірий маркер
+					className: 'arrow_box',	//custom html div marker
+					iconSize:     [35, 35],	//marker size
+					iconAnchor: [17.5, 39],	//making arrow points ti a place, not top left corner of div
+					popupAnchor:  [0, -37],
+					html: "<div class='arrowBox__circle circle_"+"grey"+"'></div>"	// circle inside the marker
+				});
+
+		if($("#map.seller__map")[0]){	// lot page check
+			map.setView([lotLat, lotLng], 10); // centering map with custom zoom value
+			lotMarker = new L.marker([lotLat, lotLng], {icon: lotIcon});
+			lotMarker.addTo(map);
+		}	
 // like activation
 	$(".likeBlock").click(function(event){
 		event.preventDefault();
@@ -473,8 +491,6 @@ $(document).ready(function(){
 		}
 	});
 // map in create.html
-	var  lotCoordinates
-		,lotMarker;
 	if ($("#mapNewLot")[0]){	// uinitialize if map container exists
 		var map = L.map('mapNewLot').setView([50.4036, 30.4812], 11);	//створюємо карту, виставляємо координати + зум
 		// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {	// шар зображення карти
@@ -490,6 +506,7 @@ $(document).ready(function(){
 			if (lotMarker){
 				map.removeLayer(lotMarker);
 			}
+			console.log(e.latlng);
 			lotCoordinates = e.latlng;
 			lotMarker = new L.marker(e.latlng, {draggable:'true'});
 			$("#formCreate #latitude").val(lotCoordinates.lat);
