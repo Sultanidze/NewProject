@@ -381,8 +381,7 @@ $(document).ready(function(){
 	});
 
 // map in lot page
-	var	 lotLat = 50.45
-		,lotLng = 30.45
+	var	 $sellerMap = $("#map.seller__map")
 		,lotMarker
 		,lotCoordinates
 		,lotIcon = L.divIcon({	// сірий маркер
@@ -393,7 +392,10 @@ $(document).ready(function(){
 					html: "<div class='arrowBox__circle circle_"+"grey"+"'></div>"	// circle inside the marker
 				});
 
-		if($("#map.seller__map")[0]){	// lot page check
+		if($sellerMap[0]){	// lot page check
+			var  lotLat = $sellerMap.attr("data-lat")
+				,lotLng = $sellerMap.attr("data-lng")
+				;
 			map.setView([lotLat, lotLng], 10); // centering map with custom zoom value
 			lotMarker = new L.marker([lotLat, lotLng], {icon: lotIcon});
 			lotMarker.addTo(map);
