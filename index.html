@@ -55,9 +55,9 @@
             <div class="map-box__inner">
                 <div class="container">
                     <div class="container_mapForm">
-                        <button class="searchForm__btn_toggle visible-xs-block">
-                            <div class="arrow_up arrow_top glyphicon glyphicon-menu-up"></div>
-                            <div class="arrow_up arrow_bottom glyphicon glyphicon-menu-up"></div>
+                        <button type="button" class="searchForm__btn_toggle visible-xs-block">
+                            <span class="arrow_up arrow_top glyphicon glyphicon-menu-up"></span>
+                            <span class="arrow_up arrow_bottom glyphicon glyphicon-menu-up"></span>
                         </button>
                         <form action="" id="form_search">
                             <div class="row">
@@ -86,7 +86,8 @@
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-5">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" id="city" placeholder="" value="Киев" name="city" required>
+                                                        <input type="text" class="form-control" id="city" placeholder="">
+                                                        <input type="text" class="hidden" name="cityId" id="cityId">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-7">
@@ -114,7 +115,7 @@
                                         <div class="col-md-9 col-sm-9">
                                             <div class="form-group-xs">
                                                 <div class="wrap__slider">
-                                                    <input type="range" min="0" max="100" value="" id="radius">
+                                                    <input type="range" min="0" max="100" id="radius">
                                                     <div id="slider"></div>
                                                 </div>
                                             </div>
@@ -402,6 +403,7 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.selectric.min.js"></script>
+    <script src="js/jquery.auto-complete.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/app.js"></script>
   </body>

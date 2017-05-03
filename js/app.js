@@ -116,6 +116,34 @@ $(document).ready(function(){
 	});
 	$(".map-box #form_search button[type='submit']").trigger("click");
 	} // if end
+
+//ajax city autocomplete
+	var  oJS
+		,cities = []
+	    ,ids = []
+	    ;
+	$("#city").autoComplete({
+		minChars: 2,
+	    source: function(term, response){
+	        $.getJSON('./ajax/autocomplete.json', { city: term }, function(data){
+	        	// console.log(data.cities[0].name);\
+	        	cities = []; // масив міст
+	    		ids = [];	// масив id міст
+	        	oJS = data;	//відповідний JSоб'єкт до JSON об'єкту AJAX відповіді
+
+	        	for (var i = 0; i < oJS.cities.length; ++i) {	// наповнимо масив міст і їхніх id
+	        		cities.push(oJS.cities[i].name);
+	        		ids.push(oJS.cities[i].id);
+	        	};
+	        	response(cities);
+	        });
+	    },
+	    onSelect: function (event, term, item) {
+	    	var cityIndex = cities.indexOf(term);	// індекс міста в масиві
+	    	$("#cityId").val(ids[cityIndex]);	// повертаємо id міста прихованому елементу форми
+	    }
+	});
+
 //ajax ads catalog load
 	var  $rubricsAjax = $(".ajax_rubrics").load("./ajax/_buy-catalogue.html")	// before proposition buttons click
 	//
