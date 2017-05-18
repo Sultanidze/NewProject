@@ -1,0 +1,160 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "title": "дрова",
+            "content": "дрова в любій кількості",
+            "type": "sell",
+            "area": "Kyiv",
+            "color": "green"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.43899536132813, 50.46875937355115]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "тварини",
+            "type": "sell",
+            "content": "тварини екзотичні оптом    ",
+            "area": "Kyiv",
+            "color": "purple"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.46285629272461, 50.451929989931344]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "літаки",
+            "content": "продажа, ремонт літаків",
+            "type": "sell",
+            "area": "Kyiv",
+            "color": "yellow"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.392560958862305, 50.458870104151565]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "риба",
+            "content": "продам синьку оптом і в роздріб",
+            "type": "sell",
+            "area": "Kyiv",
+            "color": "grey"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.55023193359375, 50.46274956681952]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "type": "sell",
+            "content": "продам чисту воду з висохлого озера, заряджена на успіх",
+            "title": "вода",
+            "area": "Kyiv",
+            "color": "blue"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.47401428222656, 50.369992582877195]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "літаки",
+            "type": "buy",
+            "content": "хочу великий",
+            "area": "Kyiv",
+            "color": "yellow"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.43890953063965, 50.407915819089794]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "вода",
+            "content": "сушить, терміново",
+            "type": "buy",
+            "area": "Kyiv",
+            "color": "blue"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.411186218261715, 50.42678404512451]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "їжа",
+            "content": "жрати хочу, люблю суші",
+            "type": "buy",
+            "area": "Kyiv",
+            "color": "grey"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.524010658264164, 50.44794032958957]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "кажан",
+            "content": "хочу домашню тваринку, сумно самому",
+            "type": "buy",
+            "area": "Kyiv",
+            "color": "purple"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.506930351257324, 50.418854836700035]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "багаття",
+            "content": "холодно тут, треба багато дров і розпалка",
+            "type": "buy",
+            "area": "Kyiv",
+            "color": "green"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.52165031433105, 50.43312645607191]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "велосипед",
+            "content": "шидкий хочу",
+            "type": "buy",
+            "area": "Kyiv",
+            "color": "red"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.505422949790955, 50.44895827147186]
+        }
+    }, {
+        "type": "Feature",
+        "properties": {
+            "title": "велосипед",
+            "type": "sell",
+            "area": "Kyiv",
+            "content": "підлітковий",
+            "color": "red"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [30.599573850631714, 50.44614350624887]
+        }
+    }]
+}

@@ -3,158 +3,72 @@
     "features": [{
         "type": "Feature",
         "properties": {
-            "title": "дрова",
-            "content": "дрова в любій кількості",
+            "title": "Первый лот",
+            "content": "Предлагаю купить мое ведро",
+            "link": "http://test11.digitalforce.ua/lot/pervyy_lot_10816",
             "type": "sell",
-            "area": "Kyiv",
-            "color": "green"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [30.43899536132813, 50.46875937355115]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "title": "тварини",
-            "type": "sell",
-            "content": "тварини екзотичні оптом    ",
-            "area": "Kyiv",
-            "color": "purple"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [30.46285629272461, 50.451929989931344]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "title": "літаки",
-            "content": "продажа, ремонт літаків",
-            "type": "sell",
-            "area": "Kyiv",
-            "color": "yellow"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [30.392560958862305, 50.458870104151565]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "title": "риба",
-            "content": "продам синьку оптом і в роздріб",
-            "type": "sell",
-            "area": "Kyiv",
+            "area": "Киев",
             "color": "grey"
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [30.55023193359375, 50.46274956681952]
+            "coordinates": [30.48089999999999832880348549224436283111572265625, 50.4010999999999995679900166578590869903564453125]
         }
     }, {
         "type": "Feature",
         "properties": {
+            "title": "Второй лот",
+            "content": "Предлагаю купить мой сноуборд",
+            "link": "http://test11.digitalforce.ua/lot/vtoroi_lot",
             "type": "sell",
-            "content": "продам чисту воду з висохлого озера, заряджена на успіх",
-            "title": "вода",
-            "area": "Kyiv",
-            "color": "blue"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [30.47401428222656, 50.369992582877195]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "title": "літаки",
-            "type": "buy",
-            "content": "хочу великий",
-            "area": "Kyiv",
-            "color": "yellow"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [30.43890953063965, 50.407915819089794]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "title": "вода",
-            "content": "сушить, терміново",
-            "type": "buy",
-            "area": "Kyiv",
-            "color": "blue"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [30.411186218261715, 50.42678404512451]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "title": "їжа",
-            "content": "жрати хочу, люблю суші",
-            "type": "buy",
-            "area": "Kyiv",
+            "area": "Киев",
             "color": "grey"
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [30.524010658264164, 50.44794032958957]
+            "coordinates": [0, 0]
         }
     }, {
         "type": "Feature",
         "properties": {
-            "title": "кажан",
-            "content": "хочу домашню тваринку, сумно самому",
-            "type": "buy",
-            "area": "Kyiv",
-            "color": "purple"
+            "title": "TEST",
+            "content": "dsfdsfdsfdsfds",
+            "link": "http://test11.digitalforce.ua/lot/test_72016",
+            "type": "sell",
+            "area": "Киев",
+            "color": "grey"
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [30.506930351257324, 50.418854836700035]
+            "coordinates": [30.536500000000000198951966012828052043914794921875, 50.42779999999999773763192933984100818634033203125]
         }
     }, {
         "type": "Feature",
         "properties": {
-            "title": "багаття",
-            "content": "холодно тут, треба багато дров і розпалка",
-            "type": "buy",
-            "area": "Kyiv",
+            "title": "Лот за 25.04",
+            "content": "Метод «getSettlements» работает в модели «AddressGeneral», этот метод выгружает справочников городов Украины (на Украинском и Русском), в которые осуществляется доставка груза компанией «Новая Почта». Стоит учитывать, что метод «getSettlements» для каждого населенного пункта возвращает область, и ра...",
+            "link": "http://test11.digitalforce.ua/lot/_26358",
+            "type": "sell",
+            "area": "Киев",
             "color": "green"
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [30.52165031433105, 50.43312645607191]
+            "coordinates": [30.47540000000000048885340220294892787933349609375, 50.48960000000000292175172944553196430206298828125]
         }
     }, {
         "type": "Feature",
         "properties": {
-            "title": "велосипед",
-            "content": "шидкий хочу",
-            "type": "buy",
-            "area": "Kyiv",
-            "color": "red"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [30.505422949790955, 50.44895827147186]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "title": "велосипед",
+            "title": "Лот за 02.05.2017",
+            "content": "Метод &laquo;getSettlements&raquo; работает в модели &laquo;AddressGeneral&raquo;, этот метод выгружает справочников городов Украины (на Украинском и Русском), в которые осуществляется доставка груза компанией &laquo;Новая Почта&raquo;. Стоит учитывать, что метод &laquo;getSettlements&raquo; для каж...",
+            "link": "http://test11.digitalforce.ua/lot/lot_za_02_05_2017_41020",
             "type": "sell",
-            "area": "Kyiv",
-            "content": "підлітковий",
-            "color": "red"
+            "area": "Киев",
+            "color": "yellow"
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [30.599573850631714, 50.44614350624887]
+            "coordinates": [30.46300000000000096633812063373625278472900390625, 50.486299999999999954525264911353588104248046875]
         }
     }]
 }

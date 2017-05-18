@@ -60,7 +60,7 @@ $(document).ready(function(){
 			subdomains: ["a", "b", "c"],
 		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
-
+	map.scrollWheelZoom.disable();	// disable zoom on map by mousewheel
 	var markers = L.markerClusterGroup();
 	var geoDataSuccess = function(data){	//function fired after succesfull geoJson data ajax load
 		var layer = L.geoJSON(data,{
@@ -76,7 +76,8 @@ $(document).ready(function(){
 				return L.marker(latlng, {icon: myIcon});	//custom html marker icon
 			},
 			onEachFeature: function (feature, layer) {
-                   layer.bindPopup('<strong>' + feature.properties.title +'</strong>' + '<br>' + feature.properties.content);
+                   // layer.bindPopup('<strong>' + feature.properties.title +'</strong>' + '<br>' + feature.properties.content);	// for map(old).json
+                   layer.bindPopup("<strong><a href='" + feature.properties.link + "'>"+ feature.properties.title +'</a></strong>' + '<br>' + feature.properties.content);
            }
 		});
 		markers.addLayer(layer);
@@ -144,20 +145,40 @@ $(document).ready(function(){
 	    }
 	});
 
-//ajax ads catalog load
-	var  $rubricsAjax = $(".ajax_rubrics").load("./ajax/_buy-catalogue.html")	// before proposition buttons click
-	//
-		,$btnsPropos = $(".btn_propos").click(function(event){
-			event.preventDefault();
+// ads catalogue without ajax
+	var $btnsPropos = $(".btn_propos").click(function(event){
+		event.preventDefault();
+		var  $rubricBuy = $("#rubric_buy")
+			,$rubricSell = $("#rubric_sell")
+			,$rubrics
+			;
+		$rubrics = $rubricBuy.add($rubricSell);	// об'єднуємо $rubricBuy і $rubricSell в $rubrics
+
+		if (!$rubrics.is(":animated")){	// відпрацьовує лише коли анімація блоків скінчилася
+			// стилізуємо кнопки
 			$btnsPropos.parent("li").removeClass("active");
 			$(this).parent("li").addClass("active");
-			// console.log($(this));
+
 			if ($(this).attr("id")=="buyPropos"){
-				$rubricsAjax.load("./ajax/_buy-catalogue.html");
-			}else{
-				$rubricsAjax.load("./ajax/_sell-catalogue.html");
+				console.log("buy");
+				console.log(!$rubricBuy.hasClass("js-active"));
+				if (!$rubricBuy.hasClass("js-active")) {
+					$rubricSell.removeClass("js-active").fadeOut(200, function(){
+						$rubricBuy.addClass("js-active").fadeIn(200);
+					})
+				};
+			}else if ($(this).attr("id")=="sellPropos"){
+				console.log("sell");
+				console.log(!$rubricSell.hasClass("js-active"));
+				if (!$rubricSell.hasClass("js-active")) {
+					$rubricBuy.removeClass("js-active").fadeOut(200, function(){
+						$rubricSell.addClass("js-active").fadeIn(200);
+					})
+				};
 			}
-		});
+		}
+	});
+
 //ajax new in ads load
 	$(".ajax_newInAds").load("./ajax/_ads-new.html", function(){
 		//new in ads slider initialization
@@ -536,9 +557,9 @@ $(document).ready(function(){
 			if (lotMarker){
 				map.removeLayer(lotMarker);
 			}
-			console.log(e.latlng);
 			lotCoordinates = e.latlng;
 			lotMarker = new L.marker(e.latlng, {draggable:'true'});
+//			$("#formCreate #coordinates").val("широта: " + lotCoordinates.lat + "; долгота: " + lotCoordinates.lng + ";");
 			$("#formCreate #latitude").val(lotCoordinates.lat);
 			$("#formCreate #longitude").val(lotCoordinates.lng);
 			lotMarker.on('dragend', function(event){
@@ -552,4 +573,12 @@ $(document).ready(function(){
 			map.addLayer(lotMarker);
 		});
 	}
+// messages in conversation send by enter button
+	if ($(".ad__conversation")[0]) {
+		$("#message_send #message").on("keyup", function(event){
+			if ( event.which == 13 ) {
+				$(this).parents("#message_send").submit();
+			}
+		});
+	};
 });
