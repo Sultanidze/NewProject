@@ -2030,6 +2030,49 @@ html .ui-button.ui-state-disabled:active {
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
 }
+.b-btn_messages{
+    margin-right: 20px;
+    line-height: 40px;
+}
+.b-btn_messages .b-message__icon{
+    width: 16px;
+    height: 10px;
+}
+.b-message__icon {
+	position: relative;
+	background: #fff;
+	border: 1px solid #fe7117;
+}
+.b-message__icon:after, .b-message__icon:before {
+	top: 100%;
+	left: 40%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.b-message__icon:after {
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: #fff;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.b-message__icon:before {
+	border-color: rgba(254, 113, 23, 0);
+	border-top-color: #fe7117;
+	border-width: 31px;
+	margin-left: -31px;
+}
+.b-message__icon_filled{
+    background: #fe7117;
+}
+.b-message__icon_filled:after{
+    border-top-color: #fe7117;
+}
+
 .form-group{
     margin-bottom: 20px;
 }
@@ -4142,6 +4185,7 @@ left: 0;
     margin: 0 10px 10px;
     padding: 0 10px;
 }
+
 
 /*-------media queries-------*/
 @media screen and (min-width: 768px){

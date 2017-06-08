@@ -180,7 +180,7 @@ $(document).ready(function(){
 	});
 
 //ajax new in ads load
-	$(".ajax_newInAds").load("./ajax/_ads-new.html", function(){
+	// $(".ajax_newInAds").load("./ajax/_ads-new.html", function(){
 		//new in ads slider initialization
 		var $newInAdsSlick = $("#newInAds>.ajax_newInAds").slick({
 			// lazyLoad: 'ondemand',
@@ -217,10 +217,10 @@ $(document).ready(function(){
 			event.preventDefault();
 			$newInAdsSlick.slick("slickNext");
 		});
-	});
+	// });
 
 //ajax new in blog load
-	$(".ajax_newInBlog").load("./ajax/_blog-new.html", function(){
+	// $(".ajax_newInBlog").load("./ajax/_blog-new.html", function(){
 		//new in blog slider initialization
 		var $newInBlogSlick = $("#newInBlog>.row").slick({
 			// lazyLoad: 'ondemand',
@@ -264,7 +264,7 @@ $(document).ready(function(){
 			event.preventDefault();
 			$newInBlogSlick.slick("slickNext");
 		});
-	});
+	// });
 
 //selectric initialization
 	// map form
