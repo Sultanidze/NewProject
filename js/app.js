@@ -51,6 +51,16 @@ $(document).ready(function(){
 		}
 	});
 
+// messages popup
+	$("#bs-example-navbar-collapse-1").find(".js-show-messages_new").on("click", function(e){
+		e.stopPropagation();
+		var $messages = $(this).find(".js-messages_new");
+			$messages.slideToggle();
+	});
+	$("body").on("click", function(){
+		$("#bs-example-navbar-collapse-1").find(".js-messages_new").slideUp();
+	});
+
 // map initialization (Leaflet.js plugin)
 	if ($("#map")[0]){	// uinitialize if map container exists
 	var map = L.map('map').setView([50.4036, 30.4812], 11);	//створюємо карту, виставляємо координати + зум
@@ -542,7 +552,7 @@ $(document).ready(function(){
 		}
 	});
 // map in create.html
-	if ($("#mapNewLot")[0]){	// uinitialize if map container exists
+	if ($("#mapNewLot")[0]){	// initialize if map container exists
 		var map = L.map('mapNewLot').setView([50.4036, 30.4812], 11);	//створюємо карту, виставляємо координати + зум
 		// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {	// шар зображення карти
 		// L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {	// шар зображення карти
@@ -551,26 +561,47 @@ $(document).ready(function(){
 		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 
-		map.on("click", function(e){
-			// map.clearLayers();
-			// var markers = L.markerClusterGroup();
-			if (lotMarker){
-				map.removeLayer(lotMarker);
+		var  latlng
+			,lotmarker
+			,$latitude = $("#latitude")
+			,$longitude = $("#longitude")
+			;
+
+// 		map.on("click", function(e){
+// 			// map.clearLayers();
+// 			// var markers = L.markerClusterGroup();
+// 			if (lotMarker){
+// 				map.removeLayer(lotMarker);
+// 			}
+// 			lotCoordinates = e.latlng;
+// 			lotMarker = new L.marker(e.latlng, {draggable:'true'});
+// //			$("#formCreate #coordinates").val("широта: " + lotCoordinates.lat + "; долгота: " + lotCoordinates.lng + ";");
+// 			$("#formCreate #latitude").val(lotCoordinates.lat);
+// 			$("#formCreate #longitude").val(lotCoordinates.lng);
+// 			lotMarker.on('dragend', function(event){
+// 			    lotMarker = event.target;
+// 			    lotCoordinates = lotMarker.getLatLng();
+// 			    lotMarker.setLatLng(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng),{draggable:'true'});
+// 			    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng));
+// 				$("#formCreate #latitude").val(lotCoordinates.lat);
+// 				$("#formCreate #longitude").val(lotCoordinates.lng);
+// 			});
+// 			map.addLayer(lotMarker);
+// 		});
+		
+		// you need to trigger change event on latitude or longitude field to update marker on map
+		$("#latitude, #longitude").on("change", function(){
+			if ($latitude.val()&&$longitude.val()){
+				latlng = new L.LatLng($latitude.val(), $longitude.val());
+
+				if (lotMarker){
+					map.removeLayer(lotMarker);
+				};
+
+				lotMarker = new L.marker(latlng);
+				map.panTo(latlng);
+				map.addLayer(lotMarker);
 			}
-			lotCoordinates = e.latlng;
-			lotMarker = new L.marker(e.latlng, {draggable:'true'});
-//			$("#formCreate #coordinates").val("широта: " + lotCoordinates.lat + "; долгота: " + lotCoordinates.lng + ";");
-			$("#formCreate #latitude").val(lotCoordinates.lat);
-			$("#formCreate #longitude").val(lotCoordinates.lng);
-			lotMarker.on('dragend', function(event){
-			    lotMarker = event.target;
-			    lotCoordinates = lotMarker.getLatLng();
-			    lotMarker.setLatLng(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng),{draggable:'true'});
-			    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng));
-				$("#formCreate #latitude").val(lotCoordinates.lat);
-				$("#formCreate #longitude").val(lotCoordinates.lng);
-			});
-			map.addLayer(lotMarker);
 		});
 	}
 // messages in conversation send by enter button
