@@ -53,6 +53,7 @@ $(document).ready(function(){
                 $('#message_send #message').attr('disabled', false);
                 if(response.ans == true) {
                     $('#message_send #message').val(''); // очищаем поле ввода текста сообщения 
+                    $('#message_send #message').focus();
                     // формируем текущую дату
                     var date = new Date();
                     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
