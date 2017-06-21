@@ -152,6 +152,9 @@ $(document).ready(function(){
 	    onSelect: function (event, term, item) {
 	    	var cityIndex = cities.indexOf(term);	// індекс міста в масиві
 	    	$("#cityId").val(ids[cityIndex]);	// повертаємо id міста прихованому елементу форми
+	    	if ($("#mapNewLot")[0]){	// if new lot page
+	    		$("#address").prop("disabled", false);	// show address field
+	    	}
 	    }
 	});
 
@@ -562,48 +565,42 @@ $(document).ready(function(){
 		}).addTo(map);
 
 		var  latlng
-			,lotmarker
+			,lotMarker
 			,$latitude = $("#latitude")
 			,$longitude = $("#longitude")
 			;
-
-// 		map.on("click", function(e){
-// 			// map.clearLayers();
-// 			// var markers = L.markerClusterGroup();
-// 			if (lotMarker){
-// 				map.removeLayer(lotMarker);
-// 			}
-// 			lotCoordinates = e.latlng;
-// 			lotMarker = new L.marker(e.latlng, {draggable:'true'});
-// //			$("#formCreate #coordinates").val("широта: " + lotCoordinates.lat + "; долгота: " + lotCoordinates.lng + ";");
-// 			$("#formCreate #latitude").val(lotCoordinates.lat);
-// 			$("#formCreate #longitude").val(lotCoordinates.lng);
-// 			lotMarker.on('dragend', function(event){
-// 			    lotMarker = event.target;
-// 			    lotCoordinates = lotMarker.getLatLng();
-// 			    lotMarker.setLatLng(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng),{draggable:'true'});
-// 			    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng));
-// 				$("#formCreate #latitude").val(lotCoordinates.lat);
-// 				$("#formCreate #longitude").val(lotCoordinates.lng);
-// 			});
-// 			map.addLayer(lotMarker);
-// 		});
 		
 		// you need to trigger change event on latitude or longitude field to update marker on map
 		$("#latitude, #longitude").on("change", function(){
-			if ($latitude.val()&&$longitude.val()){
+			if ($latitude.val()&&$longitude.val()){ 	// if both coordinates entered
 				latlng = new L.LatLng($latitude.val(), $longitude.val());
-
 				if (lotMarker){
 					map.removeLayer(lotMarker);
-				};
+				} else {
+					lotMarker = new L.marker(latlng, {draggable:'true'})
+				}
 
-				lotMarker = new L.marker(latlng);
-				map.panTo(latlng);
-				map.addLayer(lotMarker);
+				lotMarker.on('dragend', function(event){
+				    lotMarker = event.target;
+				    lotCoordinates = lotMarker.getLatLng();
+				    lotMarker.setLatLng(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng),{draggable:'true'});
+				    map.panTo(new L.LatLng(lotCoordinates.lat, lotCoordinates.lng));
+					$latitude.val(lotCoordinates.lat);	//
+					$longitude.val(lotCoordinates.lng);
+				});
+
+				map.panTo(latlng);	// center map by marker
+				map.addLayer(lotMarker);	// add marker
 			}
 		});
-	}
+	};
+// enable/disable address field when change city
+	$("#city").on("change", function(){
+		if (!$(this).val()){
+			$("#address").prop("disabled", true);
+		}
+	});
+
 // messages in conversation send by enter button
 	if ($(".ad__conversation")[0]) {
 		$("#message_send #message").on("keyup", function(event){
