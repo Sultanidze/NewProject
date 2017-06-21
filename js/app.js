@@ -152,9 +152,12 @@ $(document).ready(function(){
 	    onSelect: function (event, term, item) {
 	    	var cityIndex = cities.indexOf(term);	// індекс міста в масиві
 	    	$("#cityId").val(ids[cityIndex]);	// повертаємо id міста прихованому елементу форми
+	    	if ($("#slider")[0]){	// if index.html page
+	    		$("#slider").slider( "option", "disabled", false);	// show range slider
+	    	};
 	    	if ($("#mapNewLot")[0]){	// if new lot page
 	    		$("#address").prop("disabled", false);	// show address field
-	    	}
+	    	};
 	    }
 	});
 
@@ -311,7 +314,8 @@ $(document).ready(function(){
 		// console.log($(this).parents(".row").find(".span_radius"))
 	}
 
-	var jqUiSlider = $( "#slider" ).slider({
+	var jqUiSlider = $("#slider").slider({
+		disabled: true,
 		range: "min",
 		max: 100,	// максимальне значення
       	value: 12,	//початкове значення
@@ -598,6 +602,7 @@ $(document).ready(function(){
 	$("#city").on("change", function(){
 		if (!$(this).val()){
 			$("#address").prop("disabled", true);
+			$("#slider").slider( "option", "disabled", true );
 		}
 	});
 

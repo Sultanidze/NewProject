@@ -1696,6 +1696,11 @@ html .ui-button.ui-state-disabled:active {
 	font-weight: normal;
 	color: #454545;
 }
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: .25;
+    filter: Alpha(Opacity=35);
+    background-image: none;
+}
 
 /* Icons
 ----------------------------------*/
@@ -1756,6 +1761,10 @@ html .ui-button.ui-state-disabled:active {
 	text-align: left;
     border: 1px solid #cad5d9;
     background-color: #fff;
+}
+.ui-slider.ui-state-disabled {
+    border-color: #aaa;
+	
 }
 .ui-slider .ui-slider-handle {
 	position: absolute;
