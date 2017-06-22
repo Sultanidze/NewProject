@@ -150,6 +150,7 @@ $(document).ready(function(){
 	        });
 	    },
 	    onSelect: function (event, term, item) {
+	    	$("#city").attr("data-value", $("#city").val());
 	    	var cityIndex = cities.indexOf(term);	// індекс міста в масиві
 	    	$("#cityId").val(ids[cityIndex]);	// повертаємо id міста прихованому елементу форми
 	    	if ($("#slider")[0]){	// if index.html page
@@ -157,6 +158,7 @@ $(document).ready(function(){
 	    	};
 	    	if ($("#mapNewLot")[0]){	// if new lot page
 	    		$("#address").prop("disabled", false);	// show address field
+	    		$("#address").val($("#city").val() + ", ");	// fill address field with city name "City, ...."
 	    	};
 	    }
 	});
@@ -599,10 +601,19 @@ $(document).ready(function(){
 		});
 	};
 // enable/disable address field when change city
-	$("#city").on("change", function(){
+	$("#city").on("keyup keydown", function(){
 		if (!$(this).val()){
+			$(this).attr("data-value", "")
+			$("#cityId").val("");
+			$("#address").val("");
 			$("#address").prop("disabled", true);
 			$("#slider").slider( "option", "disabled", true );
+		}
+	});
+	$("#city").on("change", function(){
+		if (($(this).val() != $(this).attr("data-value")) && ($(this).attr("data-value"))){
+			console.log("change");
+			$(this).val($(this).attr("data-value"));
 		}
 	});
 
