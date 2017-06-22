@@ -133,6 +133,7 @@ $(document).ready(function(){
 		,cities = []
 	    ,ids = []
 	    ;
+
 	$("#city").autoComplete({
 		minChars: 2,
 	    source: function(term, response){
@@ -159,7 +160,14 @@ $(document).ready(function(){
 	    	};
 	    	if ($("#mapNewLot")[0]){	// if new lot page
 	    		$("#address").prop("disabled", false);	// show address field
-	    		$("#address").val($("#city").val() + ", ");	// fill address field with city name "City, ...."
+	    		$("#address").val($("#city").val() + " ");	// fill address field with city name "City, ...."
+	    		var staticLength = $("#address").val().length;
+	    		$('#address').on('keypress, keydown', function(event) {
+				    if (this.selectionStart <  staticLength && (event.which < 35 || event.which > 40) ||	// only arrows, home, end allowed inside static text, or
+				    	this.selectionStart == staticLength &&  event.which == 8) {	//  backspace disallowed after static text
+				        return false;
+				    }
+				});
 	    	};
 	    }
 	});
