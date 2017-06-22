@@ -155,6 +155,7 @@ $(document).ready(function(){
 	    	$("#cityId").val(ids[cityIndex]);	// повертаємо id міста прихованому елементу форми
 	    	if ($("#slider")[0]){	// if index.html page
 	    		$("#slider").slider( "option", "disabled", false);	// show range slider
+	    		refreshRadius();	// оновимо число з радіусом
 	    	};
 	    	if ($("#mapNewLot")[0]){	// if new lot page
 	    		$("#address").prop("disabled", false);	// show address field
@@ -309,21 +310,22 @@ $(document).ready(function(){
 	});
 
 //slider for map radius (uses jQuery UI)
-	var refreshRadius = function(){	//записуватимемо значення jQuery UI слайдера в прихований html повзунок
-		var radius = $(this).slider("value");
-		$(this).parents(".wrap__slider").find("input[type='range']").val(radius);
-		$(this).parents(".row").find(".span_radius").text(radius);
-		// console.log($(this).parents(".row").find(".span_radius"))
+	var refreshRadius = function(){
+		var radius = $("#slider").slider("value");
+		$("#slider").parents(".wrap__slider").find("input[type='range']").val(radius);	//записуємо радіус з jQuery UI слайдера в прихований повзунок
+		$("#slider").parents(".row").find(".span_radius").text(radius);	// оновлюємо число радіуса в label
 	}
 
+	// slider init
 	var jqUiSlider = $("#slider").slider({
-		disabled: true,
 		range: "min",
-		max: 100,	// максимальне значення
-      	value: 12,	//початкове значення
+		disabled: !$("#cityId").val(),		// якщо вибране місто (є cityId)
+		min: +$("#radius").attr("min"),		// мінімальне значення
+		max: +$("#radius").attr("max"),		// максимальне значення
+      	value: +$("#radius").attr("value"),	// початкове значення
       	create: function(){
-      		var radius = $(this).slider("value");
-			$(this).parents(".wrap__slider").find("input[type='range']").val(radius).addClass("sr-only");	//ховаємо html повзунок
+			$(this).parents(".wrap__slider").find("input[type='range']").addClass("sr-only");	//ховаємо html повзунок
+			refreshRadius();
       	},
       	slide: refreshRadius,
       	change: refreshRadius
