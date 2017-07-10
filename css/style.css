@@ -1970,6 +1970,10 @@ html .ui-button.ui-state-disabled:active {
 /*----- slick slider END -----*/
 
 /* ---------- Bootstrap overrides ---------- */
+hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 .navbar-default {
     background-color: #fff;
 /*    border: none;*/
@@ -3975,6 +3979,7 @@ a.auth__soc_gplus{
     line-height: 38px;
     font-size: 14px;
     color: #fe7117;
+    resize: none;
 }
 /* --- form_auth placeholders --- */
 .form_auth input::-webkit-input-placeholder,
@@ -4154,6 +4159,18 @@ a.auth__soc_gplus{
     font-size: 12px;
     color: #282828;
 }
+
+.heading_aside{
+    font-size: 16px;
+    font-weight: 700;
+}
+.form_contacts textarea{
+    padding-left: 20px;
+}
+.contacts_aside{
+    padding: 20px;
+    font-size: 13px;
+}
 /*-------------------------------------*/
 /* checkbox stylization */
 /* IE8 and earlier standart checkbox */
@@ -4311,12 +4328,112 @@ left: 0;
     text-align: center;
 }
 .form_create button{
-/*    display: block;*/
     width: auto;
     margin: 0 10px 10px;
     padding: 0 10px;
 }
 
+.article_blog{
+    margin-top: 30px;
+    position: relative;
+}
+.article__heading{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.article__heading_about{
+    margin-bottom: 20px;
+}
+.article__time{
+    display: block;
+    font-size: 12px;
+    line-height: 25px;
+    color: #1f4d80;
+    font-weight: 400;
+}
+.paragraph__blog{
+    font-size: 13px;
+}
+.pagination__blog ul{
+    float: right;
+}
+
+/*Pagination*/
+.pagination {    
+  width:100%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.pagination:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.pagination ul {
+  padding-left: 0;
+  list-style-type: none;
+  text-align:center;
+}
+
+.pagination ul li {
+  display: inline-table;
+  vertical-align: middle;
+  margin:0px 4px;
+  box-sizing: border-box;
+  border: 1px solid #cad5d9;
+    border-radius: 2px;
+  width: 37px;
+  height: 37px;
+/*  font-size: 0.875rem;*/
+  font-weight: 600;
+}
+
+.pagination ul li:first-child, .pagination ul li:last-child{
+    cursor: pointer;
+}
+.pagination ul li:first-child{
+    margin-left: 0;
+}
+.pagination ul li:last-child{
+    margin-right: 0;
+}
+.pagination ul li:first-child.inactive,
+.pagination ul li:last-child.inactive{
+    color: #d0d0d0;
+    cursor: default;
+}
+.pagination ul li:first-child.inactive:hover,
+.pagination ul li:last-child.inactive:hover{
+    color: #d0d0d0;
+    background: none;
+}
+
+.pagination ul li:first-child a, .pagination ul li:last-child a{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.pagination ul li a {
+  display: table-cell;
+  vertical-align: middle;
+  color:inherit;
+  text-decoration: none !important;
+}
+
+.pagination ul li:hover {
+  background: #8ca5af;
+  box-shadow: none;
+  color:#fff;
+  transition: all .5s, color .1s ease-out;
+}
+
+.pagination ul li.active {
+  background: #8ca5af;
+  box-shadow: none;
+  color:#fff;
+  transition: all .5s;
+}
 
 /*-------media queries-------*/
 @media screen and (min-width: 768px){
