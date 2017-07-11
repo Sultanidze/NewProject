@@ -4399,13 +4399,13 @@ left: 0;
 .pagination ul li:last-child{
     margin-right: 0;
 }
-.pagination ul li:first-child.inactive,
-.pagination ul li:last-child.inactive{
+.pagination ul li:first-child a.inactive,
+.pagination ul li:last-child a.inactive{
     color: #d0d0d0;
     cursor: default;
 }
-.pagination ul li:first-child.inactive:hover,
-.pagination ul li:last-child.inactive:hover{
+.pagination ul li:first-child a.inactive:hover,
+.pagination ul li:last-child a.inactive:hover{
     color: #d0d0d0;
     background: none;
 }
@@ -4421,14 +4421,14 @@ left: 0;
   text-decoration: none !important;
 }
 
-.pagination ul li:hover {
+.pagination ul li a:hover {
   background: #8ca5af;
   box-shadow: none;
   color:#fff;
   transition: all .5s, color .1s ease-out;
 }
 
-.pagination ul li.active {
+.pagination ul li a.active {
   background: #8ca5af;
   box-shadow: none;
   color:#fff;
