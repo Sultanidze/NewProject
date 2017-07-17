@@ -3204,6 +3204,7 @@ body>footer{
 .section_bookmarks{
     margin-bottom: 20px;
 }
+
 .b-pagination{
     padding-left: 0;
     list-style: none;
@@ -3247,6 +3248,7 @@ body>footer{
 .b-pagination li:hover a{
     color: #fff;
 }
+
 .section_seo aside{
     position: absolute;
     right: 0;
@@ -4355,29 +4357,29 @@ left: 0;
 .paragraph__blog{
     font-size: 13px;
 }
-.pagination__blog ul{
+.b-pagination__blog ul{
     float: right;
 }
 
 /*Pagination*/
-.pagination {    
+.b-pagination_v2{    
   width:100%;
   margin-bottom: 30px;
   text-align: center;
 }
-.pagination:after{
+.b-pagination_v2:after{
     content: "";
     display: table;
     clear: both;
 }
 
-.pagination ul {
+.b-pagination_v2 ul {
   padding-left: 0;
   list-style-type: none;
   text-align:center;
 }
 
-.pagination ul li {
+.b-pagination_v2 ul li {
   display: inline-table;
   vertical-align: middle;
   margin:0px 4px;
@@ -4390,45 +4392,47 @@ left: 0;
   font-weight: 600;
 }
 
-.pagination ul li:first-child, .pagination ul li:last-child{
+.b-pagination_v2 ul li:first-child,
+.b-pagination_v2 ul li:last-child{
     cursor: pointer;
 }
-.pagination ul li:first-child{
+.b-pagination_v2 ul li:first-child{
     margin-left: 0;
 }
-.pagination ul li:last-child{
+.b-pagination_v2 ul li:last-child{
     margin-right: 0;
 }
-.pagination ul li:first-child a.inactive,
-.pagination ul li:last-child a.inactive{
+.b-pagination_v2 ul li:first-child a.inactive,
+.b-pagination_v2 ul li:last-child a.inactive{
     color: #d0d0d0;
     cursor: default;
 }
-.pagination ul li:first-child a.inactive:hover,
-.pagination ul li:last-child a.inactive:hover{
+.b-pagination_v2 ul li:first-child a.inactive:hover,
+.b-pagination_v2 ul li:last-child a.inactive:hover{
     color: #d0d0d0;
     background: none;
 }
 
-.pagination ul li:first-child a, .pagination ul li:last-child a{
+.b-pagination_v2 ul li:first-child a,
+.b-pagination_v2 ul li:last-child a{
     padding-right: 15px;
     padding-left: 15px;
 }
-.pagination ul li a {
+.b-pagination_v2 ul li a {
   display: table-cell;
   vertical-align: middle;
   color:inherit;
   text-decoration: none !important;
 }
 
-.pagination ul li a:hover {
+.b-pagination_v2 ul li a:hover {
   background: #8ca5af;
   box-shadow: none;
   color:#fff;
   transition: all .5s, color .1s ease-out;
 }
 
-.pagination ul li a.active {
+.b-pagination_v2 ul li a.active {
   background: #8ca5af;
   box-shadow: none;
   color:#fff;
