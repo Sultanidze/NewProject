@@ -207,13 +207,19 @@ $(document).ready(function(){
 	});
 
 	// new ads on main page same height
-	$("#newInAds, #newInBlog").find(".ad_new").matchHeight({
-		byRow: true,
-	    property: 'height',
-	    target: null,
-	    remove: false
-	});
-	console.log($("#newInBlog").children(".row").children("div[class^='col-']"))
+	(function(){
+		var  matchHeightDefaults = {
+					byRow: true,
+				    property: 'height',
+				    target: null,
+				    remove: false
+				}
+			,newAds = $("#newInAds, #newInBlog").find(".ad_new")
+			;
+
+		newAds.matchHeight(matchHeightDefaults);	// same ads height in row
+		newAds.children("img").matchHeight(matchHeightDefaults);	// same ad img height
+	})();
 
 //ajax new in ads load
 	// $(".ajax_newInAds").load("./ajax/_ads-new.html", function(){
