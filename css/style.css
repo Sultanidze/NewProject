@@ -2498,7 +2498,10 @@ main .section__header .navbar-nav>li{
     padding-bottom: 20px;
 }
 .ad_new img{
-    width: 100%;
+/*    width: 100%;*/
+    margin: 0 auto;
+/*    max-height: 170px;*/
+    
 }
 .adNew__content{
     padding-left: 15px;

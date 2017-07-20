@@ -206,11 +206,19 @@ $(document).ready(function(){
 		}
 	});
 
+	// new ads on main page same height
+	$("#newInAds, #newInBlog").find(".ad_new").matchHeight({
+		byRow: true,
+	    property: 'height',
+	    target: null,
+	    remove: false
+	});
+	console.log($("#newInBlog").children(".row").children("div[class^='col-']"))
+
 //ajax new in ads load
 	// $(".ajax_newInAds").load("./ajax/_ads-new.html", function(){
 		//new in ads slider initialization
 		var $newInAdsSlick = $("#newInAds>.ajax_newInAds").slick({
-			// lazyLoad: 'ondemand',
 			arrows: false,
 			infinite: false,
 			speed: 300,
@@ -250,7 +258,6 @@ $(document).ready(function(){
 	// $(".ajax_newInBlog").load("./ajax/_blog-new.html", function(){
 		//new in blog slider initialization
 		var $newInBlogSlick = $("#newInBlog>.row").slick({
-			// lazyLoad: 'ondemand',
 			arrows: false,
 			infinite: false,
 			speed: 300,
@@ -292,6 +299,7 @@ $(document).ready(function(){
 			$newInBlogSlick.slick("slickNext");
 		});
 	// });
+
 
 //selectric initialization
 	// map form
