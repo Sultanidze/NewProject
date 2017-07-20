@@ -217,8 +217,8 @@ $(document).ready(function(){
 			,newAds = $("#newInAds, #newInBlog").find(".ad_new")
 			;
 
-		newAds.matchHeight(matchHeightDefaults);	// same ads height in row
 		newAds.children("img").matchHeight(matchHeightDefaults);	// same ad img height
+		newAds.matchHeight(matchHeightDefaults);	// same ads height in row
 	})();
 
 //ajax new in ads load
