@@ -363,8 +363,9 @@ $(document).ready(function(){
 	    onInit: function() {
 			$(".selectriccatalog-wrapper>.selectriccatalog-items ul>li.disabled").remove();	//прибираємо з меню неактивний пункт (placeholder)
 		},
-		onChange: function() {
+		onChange: function(element) {
 		    $(this).parents(".selectriccatalog-wrapper").find(".selectriccatalog .label").css("color", "#3b5e8a");
+		    $(element).change();	// fired by default
 		}
 	});
 //підвантажуватимемо маркери при зміні значень в полях форми
